@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.API", "Server.API\Server.API.csproj", "{0A2A960C-A3F8-436F-BE64-61EF0C7BD3E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.API", "Safit.API\Safit.API.csproj", "{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0A2A960C-A3F8-436F-BE64-61EF0C7BD3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2A960C-A3F8-436F-BE64-61EF0C7BD3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A2A960C-A3F8-436F-BE64-61EF0C7BD3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A2A960C-A3F8-436F-BE64-61EF0C7BD3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
