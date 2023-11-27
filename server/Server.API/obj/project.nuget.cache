@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "SCGzXgbiNrVVyzJZgsmx69VzhJ4SNztx+F2x6hQW6s+7qSPTgCdvtjDuqq08Qmm7LpnI4YBqasUyzzqq11TpEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\fumobomber\\Desktop\\safit\\server\\Server.API\\Server.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fumobomber\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.14\\microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\fumobomber\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
