@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Safit.Core.Services.Auth;
+using Safit.Core.Services.Authentification;
+using Safit.Core.Services.Authorisation;
 
 namespace Safit.API.Controllers.Authentification
 {
@@ -7,43 +8,49 @@ namespace Safit.API.Controllers.Authentification
     public class AuthentificationController : Controller
     {
         private IBearerTokenGeneratorService bearerTokenGeneratorService;
+        private IAuthorisationService authorisationService;
 
         public AuthentificationController(
-            IBearerTokenGeneratorService bearerTokenGeneratorService)
+            IBearerTokenGeneratorService bearerTokenGeneratorService,
+            IAuthorisationService authorisationService)
         {
             this.bearerTokenGeneratorService = bearerTokenGeneratorService;
+            this.authorisationService = authorisationService;
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> LoginAsync([FromBody] AuthentificationLoginRequestContract request)
+        public async Task<IActionResult> LoginAsync([FromBody] AuthentificationLoginRequestContract request, CancellationToken ct)
         {
-            return Ok(new ResponseContract<AuthentificationLoginResponseContract>()
+            try
             {
-                Success = true,
-                Message = string.Empty,
-                Value = new AuthentificationLoginResponseContract()
-                {
-                    Id = 0,
-                    Token = await bearerTokenGeneratorService.GenerateAsync(0),
-                    Username = "admin"
-                }
-            });
+                var user = await authorisationService.LoginAsync(request.Username, request.Password, ct);
+                return Ok(ResponseContract<AuthentificationLoginResponseContract>.Create(
+                    new AuthentificationLoginResponseContract()
+                    {
+                        Token = await bearerTokenGeneratorService.GenerateAsync(user),
+                        Username = user.Username
+                    }));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ResponseContract<AuthentificationLoginResponseContract>.Create(ex));
+            }
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] AuthentificationRegisterRequestContract request)
+        public async Task<IActionResult> RegisterAsync([FromBody] AuthentificationRegisterRequestContract request, CancellationToken ct)
         {
-            return Ok(new ResponseContract<AuthentificationRegisterResponseContract>()
+            try
             {
-                Success = true,
-                Message = string.Empty,
-                Value = new AuthentificationRegisterResponseContract()
-                {
-                    Id = 0,
-                    Token = await bearerTokenGeneratorService.GenerateAsync(0),
-                    Username = "admin"
-                }
-            });
+                var user = await authorisationService.RegisterAsync(request.Username, request.Password, ct);
+                return Ok(ResponseContract<AuthentificationRegisterResponseContract>.Create(
+                    new AuthentificationRegisterResponseContract()
+                    {
+                        Token = await bearerTokenGeneratorService.GenerateAsync(user),
+                        Username = user.Username
+                    }));
+            }
+            catch (Exception ex) { return BadRequest(ResponseContract<AuthentificationRegisterResponseContract>.Create(ex)); }
         }
     }
 }

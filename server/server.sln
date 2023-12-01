@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.API", "Safit.API\Safit.API.csproj", "{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.API", "Safit.API\Safit.API.csproj", "{3AC5DA3E-65C8-4C8E-893E-7E84AE994494}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{AC3B146F-2F16-4486-9F46-B6F87D730DC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{5DEDD28D-6A41-4A97-B3EA-5D68833594FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.Domain", "Safit.Core.Domain\Safit.Core.Domain.csproj", "{1BEADF61-13AC-416A-B658-D23CDB02516E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.Core.Domain", "Safit.Core.Domain\Safit.Core.Domain.csproj", "{1BEADF61-13AC-416A-B658-D23CDB02516E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.DataAccess", "Safit.Core.DataAccess\Safit.Core.DataAccess.csproj", "{158184AB-1F9A-443C-9FA6-D019A3782394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.Core.DataAccess", "Safit.Core.DataAccess\Safit.Core.DataAccess.csproj", "{158184AB-1F9A-443C-9FA6-D019A3782394}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{91B25648-8978-434B-96FD-B26AB5E6D165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.Services.Auth", "Safit.Core.Services.Auth\Safit.Core.Services.Auth.csproj", "{47379081-D493-482C-A840-FEA3EC1A7A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.Core.Services.Authentification", "Safit.Core.Services.Authentification\Safit.Core.Services.Authentification.csproj", "{47379081-D493-482C-A840-FEA3EC1A7A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.Services.Authorisation", "Safit.Core.Services.Authorisation\Safit.Core.Services.Authorisation.csproj", "{AB879BEE-CBFA-4E73-B837-6AD523788DC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{47379081-D493-482C-A840-FEA3EC1A7A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47379081-D493-482C-A840-FEA3EC1A7A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47379081-D493-482C-A840-FEA3EC1A7A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{158184AB-1F9A-443C-9FA6-D019A3782394} = {5DEDD28D-6A41-4A97-B3EA-5D68833594FB}
 		{91B25648-8978-434B-96FD-B26AB5E6D165} = {5DEDD28D-6A41-4A97-B3EA-5D68833594FB}
 		{47379081-D493-482C-A840-FEA3EC1A7A75} = {91B25648-8978-434B-96FD-B26AB5E6D165}
+		{AB879BEE-CBFA-4E73-B837-6AD523788DC9} = {91B25648-8978-434B-96FD-B26AB5E6D165}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC33E462-79EF-4CC8-8354-343CC1918321}

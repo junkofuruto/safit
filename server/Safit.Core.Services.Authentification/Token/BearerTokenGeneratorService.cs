@@ -1,14 +1,15 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Safit.Core.Domain.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Safit.Core.Services.Auth.Token;
+namespace Safit.Core.Services.Authentification.Token;
 
 public sealed class BearerTokenGeneratorService : IBearerTokenGeneratorService
 {
-    private static readonly TimeSpan tokenLifespan = TimeSpan.FromHours(8);
+    private static readonly TimeSpan tokenLifespan = TimeSpan.FromHours(1);
     private IConfiguration configuration;
 
     public BearerTokenGeneratorService(IConfiguration configuration)
@@ -16,7 +17,7 @@ public sealed class BearerTokenGeneratorService : IBearerTokenGeneratorService
         this.configuration = configuration;
     }
 
-    public async Task<string> GenerateAsync(long userId)
+    public async Task<string> GenerateAsync(User user)
     {
         return await Task.Run(() =>
         {
@@ -28,7 +29,8 @@ public sealed class BearerTokenGeneratorService : IBearerTokenGeneratorService
                 Expires = DateTime.UtcNow.Add(tokenLifespan),
                 Subject = new ClaimsIdentity(new[] 
                 { 
-                    new Claim("userId", userId.ToString()) 
+                    new Claim("id", user.Id.ToString()), 
+                    new Claim("usernaname", user.Username!.ToString())
                 }),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Safit:Bearer:IssuerSigningKey"]!)),
