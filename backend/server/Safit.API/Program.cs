@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Safit.Core.DataAccess;
+using Safit.Core.DataAccess.Context;
 using Safit.Core.Services.Authentification;
 using Safit.Core.Services.Authentification.Token;
 using Safit.Core.Services.Authorisation;
@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IBearerTokenDispatcherService, BearerTokenDispatcherService>();
 builder.Services.AddScoped<IBearerTokenGeneratorService, BearerTokenGeneratorService>();
 builder.Services.AddScoped<IAuthorisationService, AuthorisationService>();
-builder.Services.AddDbContext<DatabaseContext>();
+builder.Services.AddDbContext<SafitDbContext>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

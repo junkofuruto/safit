@@ -23,7 +23,7 @@ namespace Safit.API.Controllers.Authentification
         {
             try
             {
-                var user = await authorisationService.LoginAsync(request.Username, request.Password, ct);
+                var user = await authorisationService.LoginAsync(request.Username!, request.Password!, ct);
                 return Ok(ResponseContract<AuthentificationLoginResponseContract>.Create(
                     new AuthentificationLoginResponseContract()
                     {
@@ -42,7 +42,7 @@ namespace Safit.API.Controllers.Authentification
         {
             try
             {
-                var user = await authorisationService.RegisterAsync(request.Username, request.Password, ct);
+                var user = await authorisationService.RegisterAsync(request.Username!, request.Password!, ct);
                 return Ok(ResponseContract<AuthentificationRegisterResponseContract>.Create(
                     new AuthentificationRegisterResponseContract()
                     {

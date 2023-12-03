@@ -40,7 +40,7 @@ public class BearerTokenDispatcherService : IBearerTokenDispatcherService
                 var jwtToken = validatedToken as JwtSecurityToken;
                 var id = Convert.ToInt64(jwtToken?.Claims.FirstOrDefault(c => c.Type == "id")?.Value);
                 var username = jwtToken?.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-                return new User() { Id = id, Username = username };
+                return new User() { Id = id, Username = username! };
             }
             catch
             {
