@@ -2,55 +2,54 @@
 using Safit.Core.Services.Authentification;
 using Safit.Core.Services.Authorisation;
 
-namespace Safit.API.Controllers.Authentification
+namespace Safit.API.Controllers.Authentification;
+
+[Route("api/auth")]
+public class AuthentificationController : Controller
 {
-    [Route("api/auth")]
-    public class AuthentificationController : Controller
+    private IBearerTokenGeneratorService bearerTokenGeneratorService;
+    private IAuthorisationService authorisationService;
+
+    public AuthentificationController(
+        IBearerTokenGeneratorService bearerTokenGeneratorService,
+        IAuthorisationService authorisationService)
     {
-        private IBearerTokenGeneratorService bearerTokenGeneratorService;
-        private IAuthorisationService authorisationService;
+        this.bearerTokenGeneratorService = bearerTokenGeneratorService;
+        this.authorisationService = authorisationService;
+    }
 
-        public AuthentificationController(
-            IBearerTokenGeneratorService bearerTokenGeneratorService,
-            IAuthorisationService authorisationService)
+    [HttpPost("login")]
+    public async Task<IActionResult> LoginAsync([FromBody] AuthentificationLoginRequestContract request, CancellationToken ct)
+    {
+        try
         {
-            this.bearerTokenGeneratorService = bearerTokenGeneratorService;
-            this.authorisationService = authorisationService;
+            var user = await authorisationService.LoginAsync(request.Username!, request.Password!, ct);
+            return Ok(ResponseContract<AuthentificationLoginResponseContract>.Create(
+                new AuthentificationLoginResponseContract()
+                {
+                    Token = await bearerTokenGeneratorService.GenerateAsync(user),
+                    Username = user.Username
+                }));
         }
+        catch (Exception ex)
+        {
+            return BadRequest(ResponseContract<AuthentificationLoginResponseContract>.Create(ex));
+        }
+    }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> LoginAsync([FromBody] AuthentificationLoginRequestContract request, CancellationToken ct)
+    [HttpPost("register")]
+    public async Task<IActionResult> RegisterAsync([FromBody] AuthentificationRegisterRequestContract request, CancellationToken ct)
+    {
+        try
         {
-            try
-            {
-                var user = await authorisationService.LoginAsync(request.Username!, request.Password!, ct);
-                return Ok(ResponseContract<AuthentificationLoginResponseContract>.Create(
-                    new AuthentificationLoginResponseContract()
-                    {
-                        Token = await bearerTokenGeneratorService.GenerateAsync(user),
-                        Username = user.Username
-                    }));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ResponseContract<AuthentificationLoginResponseContract>.Create(ex));
-            }
+            var user = await authorisationService.RegisterAsync(request.Username!, request.Password!, ct);
+            return Ok(ResponseContract<AuthentificationRegisterResponseContract>.Create(
+                new AuthentificationRegisterResponseContract()
+                {
+                    Token = await bearerTokenGeneratorService.GenerateAsync(user),
+                    Username = user.Username
+                }));
         }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] AuthentificationRegisterRequestContract request, CancellationToken ct)
-        {
-            try
-            {
-                var user = await authorisationService.RegisterAsync(request.Username!, request.Password!, ct);
-                return Ok(ResponseContract<AuthentificationRegisterResponseContract>.Create(
-                    new AuthentificationRegisterResponseContract()
-                    {
-                        Token = await bearerTokenGeneratorService.GenerateAsync(user),
-                        Username = user.Username
-                    }));
-            }
-            catch (Exception ex) { return BadRequest(ResponseContract<AuthentificationRegisterResponseContract>.Create(ex)); }
-        }
+        catch (Exception ex) { return BadRequest(ResponseContract<AuthentificationRegisterResponseContract>.Create(ex)); }
     }
 }

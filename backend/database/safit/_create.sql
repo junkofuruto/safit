@@ -1,3 +1,5 @@
+-- DROP DATABASE [safit]
+
 CREATE DATABASE [safit];
 GO;
 
@@ -10,6 +12,13 @@ GO;
 CREATE TABLE sf.[user]
 (
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
+	[email]				NVARCHAR(64) NOT NULL UNIQUE,
+	[username]			NVARCHAR(32) NOT NULL UNIQUE,
+	[password]			NVARCHAR(32) NOT NULL,
+	[first_name]		NVARCHAR(32) NOT NULL,
+	[last_name]			NVARCHAR(32) NOT NULL,
+	[profile_src]		VARCHAR(65) NULL,
+	[balance]			MONEY NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id])
 );
@@ -19,6 +28,7 @@ CREATE TABLE sf.[message]
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[from_user_id]		BIGINT NOT NULL,
 	[dest_user_id]		BIGINT NOT NULL,
+	[value]				NVARCHAR(512) NOT NULL,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([from_user_id]) REFERENCES sf.[user] ([id]),
@@ -29,6 +39,7 @@ CREATE TABLE sf.[attachment]
 (
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[message_id]		BIGINT NOT NULL,
+	[src]				VARCHAR(65) NOT NULL,
 
 	FOREIGN KEY ([message_id]) REFERENCES sf.[message] ([id])
 )
@@ -36,6 +47,7 @@ CREATE TABLE sf.[attachment]
 CREATE TABLE sf.[trainer]
 (
 	[id]				BIGINT NOT NULL,
+	[decription]		NVARCHAR(512) NOT NULL,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([id]) REFERENCES sf.[user] ([id])
@@ -54,6 +66,8 @@ CREATE TABLE sf.[subscription]
 CREATE TABLE sf.[sport]
 (
 	[id]				BIGINT NOT NULL,
+	[name]				NVARCHAR(30) NOT NULL,
+	[description]		NVARCHAR(200) NOT NULL,
 
 	PRIMARY KEY ([id])				
 )
@@ -73,6 +87,9 @@ CREATE TABLE sf.[course]
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
+	[price]				MONEY NOT NULL,
+	[name]				NVARCHAR(100) NOT NULL,
+	[description]		NVARCHAR(400) NOT NULL,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id])
@@ -83,7 +100,10 @@ CREATE TABLE sf.[post]
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
+	[content]			NVARCHAR(2500) NOT NULL,
 	[course_id]			BIGINT NULL,
+	[views]				INT NOT NULL DEFAULT 0,
+	[visible]			BIT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
@@ -96,6 +116,8 @@ CREATE TABLE sf.[video]
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
 	[course_id]			BIGINT NULL,
+	[views]				INT NOT NULL DEFAULT 0,
+	[visible]			BIT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
@@ -107,6 +129,10 @@ CREATE TABLE sf.[product]
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
+	[link]				NVARCHAR(512) NOT NULL,
+	[price]				MONEY NOT NULL,
+	[name]				NVARCHAR(100) NOT NULL,
+	[description]		NVARCHAR(400) NOT NULL,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
@@ -164,6 +190,7 @@ CREATE TABLE sf.[cart_content]
 (
 	[cart_id]			BIGINT NOT NULL,
 	[product_id]		BIGINT NOT NULL,
+	[amount]			INT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([cart_id], [product_id]),
 	FOREIGN KEY ([cart_id]) REFERENCES sf.[cart] ([id]),
@@ -174,6 +201,7 @@ CREATE TABLE sf.[course_access]
 (
 	[user_id]			BIGINT NOT NULL,
 	[course_id]			BIGINT NOT NULL,
+	[purchase_dt]		DATETIME NOT NULL DEFAULT GETDATE(),
 
 	PRIMARY KEY ([user_id], [course_id]),
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),

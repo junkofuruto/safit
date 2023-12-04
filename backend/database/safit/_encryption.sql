@@ -1,0 +1,12 @@
+USE [master];
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = '83)h<S-"dB/J,Q%+/0£[dCM7|)in5"dc(2Fb%,q)}SM|c8udZ<';
+CREATE CERTIFICATE [sf.database_cert] WITH SUBJECT = 'Safit database encryption cetificate';
+GO
+
+USE [safit];
+CREATE DATABASE ENCRYPTION KEY
+   WITH ALGORITHM = AES_256
+   ENCRYPTION BY SERVER CERTIFICATE [sf.database_cert];
+GO
+
+ALTER DATABASE [safit] SET ENCRYPTION ON;

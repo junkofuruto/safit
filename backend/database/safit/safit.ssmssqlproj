@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="safit">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-6V0D4V5:DESKTOP-6V0D4V5\fumobomber">
+          <Created>2023-12-03T22:56:09.0055518+03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-6V0D4V5</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="_authorisation.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>_authorisation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_create.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>_create.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_encryption.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>_encryption.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
