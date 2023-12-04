@@ -19,9 +19,11 @@ CREATE TABLE sf.[user]
 	[last_name]			NVARCHAR(32) NOT NULL,
 	[profile_src]		VARCHAR(65) NULL,
 	[balance]			MONEY NOT NULL DEFAULT 0,
+	[token]				VARCHAR(100) NOT NULL,
 
 	PRIMARY KEY ([id])
 );
+GO
 
 CREATE TABLE sf.[message]
 (
@@ -34,6 +36,7 @@ CREATE TABLE sf.[message]
 	FOREIGN KEY ([from_user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([dest_user_id]) REFERENCES sf.[user] ([id])
 )
+GO
 
 CREATE TABLE sf.[attachment]
 (
@@ -43,6 +46,7 @@ CREATE TABLE sf.[attachment]
 
 	FOREIGN KEY ([message_id]) REFERENCES sf.[message] ([id])
 )
+GO
 
 CREATE TABLE sf.[trainer]
 (
@@ -52,6 +56,7 @@ CREATE TABLE sf.[trainer]
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([id]) REFERENCES sf.[user] ([id])
 )
+GO
 
 CREATE TABLE sf.[subscription]
 (
@@ -62,6 +67,7 @@ CREATE TABLE sf.[subscription]
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([trainer_id]) REFERENCES sf.[trainer] ([id])
 )
+GO
 
 CREATE TABLE sf.[sport]
 (
@@ -81,6 +87,7 @@ CREATE TABLE sf.[trainer_sport]
 	FOREIGN KEY ([trainer_id]) REFERENCES sf.[trainer] ([id]),
 	FOREIGN KEY ([sport_id]) REFERENCES sf.[sport] ([id]),
 )
+GO
 
 CREATE TABLE sf.[course]
 (
@@ -94,6 +101,7 @@ CREATE TABLE sf.[course]
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id])
 )
+GO
 
 CREATE TABLE sf.[post]
 (
@@ -109,6 +117,7 @@ CREATE TABLE sf.[post]
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
+GO
 
 CREATE TABLE sf.[video]
 (
@@ -123,6 +132,7 @@ CREATE TABLE sf.[video]
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
+GO
 
 CREATE TABLE sf.[product]
 (
@@ -137,6 +147,7 @@ CREATE TABLE sf.[product]
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
 )
+GO
 
 CREATE TABLE sf.[timecode]
 (
@@ -153,6 +164,7 @@ CREATE TABLE sf.[timecode]
 	FOREIGN KEY ([post_id]) REFERENCES sf.[post] ([id]),
 	FOREIGN KEY ([trainer_id]) REFERENCES sf.[trainer] ([id])
 )
+GO
 
 CREATE TABLE sf.[like]
 (
@@ -163,6 +175,7 @@ CREATE TABLE sf.[like]
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([video_id]) REFERENCES sf.[video] ([id])
 )
+GO
 
 CREATE TABLE sf.[comment]
 (
@@ -176,6 +189,7 @@ CREATE TABLE sf.[comment]
 	FOREIGN KEY ([video_id]) REFERENCES sf.[video] ([id]),
 	FOREIGN KEY ([branch_id]) REFERENCES sf.[comment] ([id])
 )
+GO
 
 CREATE TABLE sf.[cart]
 (
@@ -185,6 +199,7 @@ CREATE TABLE sf.[cart]
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id])
 )
+GO
 
 CREATE TABLE sf.[cart_content]
 (
@@ -196,6 +211,7 @@ CREATE TABLE sf.[cart_content]
 	FOREIGN KEY ([cart_id]) REFERENCES sf.[cart] ([id]),
 	FOREIGN KEY ([product_id]) REFERENCES sf.[product] ([id])
 )
+GO
 
 CREATE TABLE sf.[course_access]
 (
@@ -207,6 +223,7 @@ CREATE TABLE sf.[course_access]
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
+GO
 
 CREATE TABLE sf.[video_part]
 (
@@ -217,3 +234,4 @@ CREATE TABLE sf.[video_part]
 	PRIMARY KEY ([part_id], [video_id]),
 	FOREIGN KEY ([video_id]) REFERENCES sf.video ([id])
 )
+GO
