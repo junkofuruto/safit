@@ -1,8 +1,6 @@
-﻿using Safit.Core.Domain.Entities;
-
-namespace Safit.Core.Services.Authentification;
+﻿namespace Safit.Core.Services.Authentification;
 
 public interface IBearerTokenGeneratorService
 {
-    public Task<string> GenerateAsync(User user);
+    public Task<string> GenerateAsync();
 }

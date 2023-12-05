@@ -4,5 +4,5 @@ GO
 
 USE [safit];
 CREATE USER [sf.application] FOR LOGIN [sf.application];
-GRANT EXECUTE TO [sf.application];
+GRANT EXECUTE, SELECT TO [sf.application];
 GO

@@ -25,33 +25,9 @@ CREATE TABLE sf.[user]
 );
 GO
 
-CREATE TABLE sf.[message]
-(
-	[id]				BIGINT NOT NULL IDENTITY(0, 1),
-	[from_user_id]		BIGINT NOT NULL,
-	[dest_user_id]		BIGINT NOT NULL,
-	[value]				NVARCHAR(512) NOT NULL,
-
-	PRIMARY KEY ([id]),
-	FOREIGN KEY ([from_user_id]) REFERENCES sf.[user] ([id]),
-	FOREIGN KEY ([dest_user_id]) REFERENCES sf.[user] ([id])
-)
-GO
-
-CREATE TABLE sf.[attachment]
-(
-	[id]				BIGINT NOT NULL IDENTITY(0, 1),
-	[message_id]		BIGINT NOT NULL,
-	[src]				VARCHAR(65) NOT NULL,
-
-	FOREIGN KEY ([message_id]) REFERENCES sf.[message] ([id])
-)
-GO
-
 CREATE TABLE sf.[trainer]
 (
-	[id]				BIGINT NOT NULL,
-	[decription]		NVARCHAR(512) NOT NULL,
+	[id]				BIGINT NOT NULL
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([id]) REFERENCES sf.[user] ([id])
@@ -78,7 +54,7 @@ CREATE TABLE sf.[sport]
 	PRIMARY KEY ([id])				
 )
 
-CREATE TABLE sf.[trainer_sport]
+CREATE TABLE sf.[specialisation]
 (
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
@@ -99,7 +75,7 @@ CREATE TABLE sf.[course]
 	[description]		NVARCHAR(400) NOT NULL,
 
 	PRIMARY KEY ([id]),
-	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id])
+	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[specialisation] ([trainer_id], [sport_id])
 )
 GO
 
@@ -114,7 +90,7 @@ CREATE TABLE sf.[post]
 	[visible]			BIT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id]),
-	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
+	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[specialisation] ([trainer_id], [sport_id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
 GO
@@ -129,7 +105,7 @@ CREATE TABLE sf.[video]
 	[visible]			BIT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id]),
-	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
+	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[specialisation] ([trainer_id], [sport_id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
 GO
@@ -145,24 +121,7 @@ CREATE TABLE sf.[product]
 	[description]		NVARCHAR(400) NOT NULL,
 
 	PRIMARY KEY ([id]),
-	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[trainer_sport] ([trainer_id], [sport_id]),
-)
-GO
-
-CREATE TABLE sf.[timecode]
-(
-	[video_id]			BIGINT NOT NULL,
-	[timing]			TIME NOT NULL,
-	[product_id]		BIGINT NULL,
-	[course_id]			BIGINT NULL,
-	[post_id]			BIGINT NULL,
-	[trainer_id]		BIGINT NULL,
-
-	PRIMARY KEY ([video_id], [timing]),
-	FOREIGN KEY ([product_id]) REFERENCES sf.[product] ([id]),
-	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id]),
-	FOREIGN KEY ([post_id]) REFERENCES sf.[post] ([id]),
-	FOREIGN KEY ([trainer_id]) REFERENCES sf.[trainer] ([id])
+	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[specialisation] ([trainer_id], [sport_id]),
 )
 GO
 
@@ -222,16 +181,5 @@ CREATE TABLE sf.[course_access]
 	PRIMARY KEY ([user_id], [course_id]),
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
-)
-GO
-
-CREATE TABLE sf.[video_part]
-(
-	[part_id]			BIGINT NOT NULL IDENTITY(0, 1),
-	[video_id]			BIGINT NOT NULL,
-	[source]			VARCHAR(65) NOT NULL,
-
-	PRIMARY KEY ([part_id], [video_id]),
-	FOREIGN KEY ([video_id]) REFERENCES sf.video ([id])
 )
 GO

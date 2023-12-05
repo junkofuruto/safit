@@ -1,0 +1,3211 @@
+{
+	"tables": {
+		"2965bc69-6880-4c6c-8f8c-7e633f44c496": {
+			"id": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"visible": true,
+			"name": "user",
+			"desc": "Пользователь - это человек, который имеет доступ к социальным, познавательно-развлекательным и продуктовым ресурсам или функционалу в системе.",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0c738c5b-a9f3-4336-bfa1-efed6ed803ae",
+					"name": "email",
+					"datatype": "varchar",
+					"param": "65",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9fcc7526-271a-452c-845c-1de6de680abe",
+					"name": "username",
+					"datatype": "varchar",
+					"param": "64",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "98b43c12-4c01-4aa9-af73-4368d4897af5",
+					"name": "password",
+					"datatype": "varchar",
+					"param": "64",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "aab2ea51-df04-44fd-a3a9-1b3b1194df25",
+					"name": "first_name",
+					"datatype": "varchar",
+					"param": "30",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5d420652-c6b9-4c32-9ca8-e2959786698e",
+					"name": "last_name",
+					"datatype": "varchar",
+					"param": "30",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "06a160db-8bbb-4cca-8694-789416ed2d02",
+					"name": "picture_src",
+					"datatype": "varchar",
+					"param": "65",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f51a4940-9d15-42b4-8a6e-04227a4da6b2",
+					"name": "balance",
+					"datatype": "money",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d75fe907-9862-419f-ae9a-58c77bbd9f0f",
+					"name": "token",
+					"datatype": "varchar",
+					"param": "100",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"9ebeb562-6b0e-4eef-b784-52ce852ee537",
+				"51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
+				"de0fd474-811b-47fb-812b-b1e07db3f1bf",
+				"1a820817-ae26-4043-b4b8-2281be30f1ee",
+				"ce6dc1ec-adad-4abe-8bc3-6e449724a98d",
+				"0b3e3d5e-1ef4-4b8e-8943-c284ce95739c",
+				"89fc8c26-022e-496b-9f42-aca215465f35",
+				"1f40bcc6-a828-4aa5-9349-86153b1f546f"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+					"name": "table1_pkey",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "5f09bc05-631c-4f68-a1c7-89b9edb25ab2",
+							"colid": "123e749a-1ec0-4d77-a361-7fddad9bab9a"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"6b80d8a8-e176-4364-979a-657cf1585c4d": {
+			"id": "6b80d8a8-e176-4364-979a-657cf1585c4d",
+			"visible": true,
+			"name": "message",
+			"desc": "Сообщение - это текст, отправленное одним пользователем другому",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "f26d4dee-9357-4880-b0a3-09d33fc4124f",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "e5034938-5fc2-4637-af4f-093b97797ac6",
+					"name": "user_id_src",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "279be83f-575b-4d3d-aa7c-bfaf1753083b",
+					"name": "user_id_dst",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "efd9d4c1-e3af-40f1-99b9-99a1c716bcc0",
+					"name": "value",
+					"datatype": "nvarchar",
+					"param": "512",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"9ebeb562-6b0e-4eef-b784-52ce852ee537",
+				"51894966-bbf1-4f1d-ae7b-fd49a6c27eee"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "cbc196a7-40c3-426a-bc04-287e724686c4",
+					"name": "table1_pkey1",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": []
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"879dcb3b-8e85-45ff-95ff-10d74034dabb": {
+			"id": "879dcb3b-8e85-45ff-95ff-10d74034dabb",
+			"visible": true,
+			"name": "trainer",
+			"desc": "Тренер - это пользователь, изьявивший желание продавать свою продукцию или контент",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "1f712a46-7599-4611-b93c-5273aa05cdde",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"de0fd474-811b-47fb-812b-b1e07db3f1bf",
+				"9f22f7ff-ed94-4a4b-b3a5-b6874213e957",
+				"6df8e6eb-d313-4155-86b2-c8ddf9f6ec5a"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "925f971c-38a3-4fd6-b385-41538f8806f7",
+					"name": "table1_pkey2",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "281bfa0f-6b68-4651-b947-40b42f314746",
+							"colid": "1f712a46-7599-4611-b93c-5273aa05cdde"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"cfc4387e-6f6d-427a-ad54-1009e2b9a7f7": {
+			"id": "cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
+			"visible": true,
+			"name": "subcription",
+			"desc": "Подписка - это связь тренера и пользователя, который желает следить за обновлениями тренера",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "97a59a12-7173-4b9d-99ab-f628d4cec996",
+					"name": "user_id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "268e1f71-0f88-4ca7-948c-a7b7c0a22cad",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"1a820817-ae26-4043-b4b8-2281be30f1ee",
+				"9f22f7ff-ed94-4a4b-b3a5-b6874213e957"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "5fa3e63b-d8e5-402a-8587-aaa0610044d0",
+					"name": "table1_pkey3",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "c82c3245-0e37-4aea-bae3-1deb9ba6b68e",
+							"colid": "97a59a12-7173-4b9d-99ab-f628d4cec996"
+						},
+						{
+							"id": "0f6b3157-7d5a-4cc4-b250-b180cd3c72f4",
+							"colid": "268e1f71-0f88-4ca7-948c-a7b7c0a22cad"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"e88a42a6-c179-46ff-8433-f178825d1074": {
+			"id": "e88a42a6-c179-46ff-8433-f178825d1074",
+			"visible": true,
+			"name": "sport",
+			"desc": "Спорт - это тег, по которому пользователи и тренеры смогут находить/создавать контент",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "871eb31f-3582-4889-9bdc-8f27014cb549",
+					"name": "id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e41fb35c-83ef-429b-9989-39eb4a9b77eb",
+					"name": "name",
+					"datatype": "nvarchar",
+					"param": "50",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8ca24839-76ea-4215-af6a-0ddcafe91f48",
+					"name": "description",
+					"datatype": "nvarchar",
+					"param": "200",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"a93ab03c-5e48-4115-841d-cf3bba96c90b"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "4796b0e5-da30-4cf9-a1b7-6482aa1fcf07",
+					"name": "table1_pkey4",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "88c9553e-1791-4e04-b737-feded9df0209",
+							"colid": "871eb31f-3582-4889-9bdc-8f27014cb549"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f": {
+			"id": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"visible": true,
+			"name": "specialisation",
+			"desc": "Специализация - это связь между видом спорта и тренером, дающая гарантию, что тренер владеет этим видом спорта",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8",
+					"name": "sport_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"6df8e6eb-d313-4155-86b2-c8ddf9f6ec5a",
+				"a93ab03c-5e48-4115-841d-cf3bba96c90b",
+				"3abcb179-84e2-441a-af2c-0198218b839c",
+				"4bc547e0-4d4a-4c96-a38b-5a012186cead",
+				"2bad06bf-cb28-467d-9781-cd531cdf9d8f",
+				"f849c6bd-8fc4-45c9-90ea-3b721d6c9b1d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "0e70b318-d821-4843-8bdb-b252a72f9269",
+					"name": "table1_pkey5",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "fdf33523-b38d-45de-a8b8-3a1021f30b79",
+							"colid": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46"
+						},
+						{
+							"id": "cace0ea1-4006-4dd0-a958-cc8ce94fb4ae",
+							"colid": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"5d2a8c45-3a16-4d5b-b72c-e13a20a2b086": {
+			"id": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+			"visible": true,
+			"name": "course",
+			"desc": "Курс - это платная тематическая сборка медиа и статей, которую пользователь может купить ",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "6f19e9b9-f46b-412f-9a5b-3282c6036830",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "76bdf5fc-6c2d-443e-a0da-dd32ea8e7786",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "27097c6d-43be-4e70-8478-52808f1b7793",
+					"name": "sport_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "94275d39-0d1c-4c92-8fed-506ebf397242",
+					"name": "price",
+					"datatype": "money",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "beb93a07-59ab-4702-8667-311a261558a1",
+					"name": "name",
+					"datatype": "nvarchar",
+					"param": "100",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2531436c-7746-4283-b997-b2dc91dcb623",
+					"name": "description",
+					"datatype": "nvarchar",
+					"param": "500",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"3abcb179-84e2-441a-af2c-0198218b839c",
+				"d115c787-83b9-46e0-9a58-1b4c7a50b6a4",
+				"6067a671-58fb-4952-8bf9-2e87b457c50c",
+				"eb7915d0-0b6c-4d83-893e-29d9e4541273"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "b3ba1a9f-0525-4b5f-b0de-b85a2a18748c",
+					"name": "table1_pkey6",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "f7e0d084-eed4-4ed3-aa52-c49d6ac4b1bb",
+							"colid": "6f19e9b9-f46b-412f-9a5b-3282c6036830"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"f16c9b02-ded2-4c8e-bb90-f10fec9c05aa": {
+			"id": "f16c9b02-ded2-4c8e-bb90-f10fec9c05aa",
+			"visible": true,
+			"name": "post",
+			"desc": "Пост - это статья опубликованная тренером, форматированная в виде markup ",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "908ea282-8400-4d4d-b3a7-8ba221b100d8",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c801d6aa-b638-4fdd-a591-1e9a19fd4ac5",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "de60cf47-8a33-4385-964f-b8182ef637e8",
+					"name": "sport_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "2fb42f2b-546a-4dd7-bac0-7283ba78f40f",
+					"name": "course_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "9fc58a7e-c75d-400e-a511-f91039e79a6a",
+					"name": "views",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "48f3c953-f6f7-4154-86d3-2f125fa3be61",
+					"name": "is_visible",
+					"datatype": "bit",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "760d5988-04e3-42ae-b9e9-bdfc42a52c94",
+					"name": "content",
+					"datatype": "nvarchar",
+					"param": "2500",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"4bc547e0-4d4a-4c96-a38b-5a012186cead",
+				"d115c787-83b9-46e0-9a58-1b4c7a50b6a4"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "2b15acf0-bf9c-4378-bca3-7a7d2e507f29",
+					"name": "table1_pkey7",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "1c261de6-1d8d-49fd-a99e-df6576956dc3",
+							"colid": "908ea282-8400-4d4d-b3a7-8ba221b100d8"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"b657d3c4-1dee-4a2a-bba6-0871c562efd3": {
+			"id": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"visible": true,
+			"name": "video",
+			"desc": "Видео - это медиа, опубликованное тренером",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "0421319f-634d-4678-853c-79533b3009d4",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d5060d6f-ebd5-4803-bf26-024d58160583",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "50f1a41b-9ff1-4c7f-9d48-f45680bf1e6a",
+					"name": "sport_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "60530bab-96f0-4549-81a2-d9357230e442",
+					"name": "course_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "badae811-edae-4b5b-b206-3298bdaacde5",
+					"name": "views",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "bada563c-4ffc-4681-a842-607484808c60",
+					"name": "is_visible",
+					"datatype": "bit",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "00e3a117-7be2-4038-8f93-88ece6b3f117",
+					"name": "length",
+					"datatype": "time",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"2bad06bf-cb28-467d-9781-cd531cdf9d8f",
+				"6067a671-58fb-4952-8bf9-2e87b457c50c",
+				"15cdda22-bac1-4e73-9c3e-3ea4a1feb5d7",
+				"f405bbb4-9f10-4395-89ed-2c95e2f3cad3",
+				"80891c28-2df0-45d1-922d-adffbe9d5c52",
+				"e2fe2eee-98ec-4323-8b85-7d494a8cf2f3",
+				"49e81fdc-b1a0-43ad-bd44-a593dd7a4866"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+					"name": "table1_pkey8",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "de425e87-9e22-4560-a34f-fd8befcfe432",
+							"colid": "0421319f-634d-4678-853c-79533b3009d4"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"7ed328bd-4e74-49b3-87d4-89eca0690787": {
+			"id": "7ed328bd-4e74-49b3-87d4-89eca0690787",
+			"visible": true,
+			"name": "product",
+			"desc": "Продукт - это товар, созданный тренером, который он может продвигать на площадке",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "d93c0553-23b0-4190-9d96-5e091b603158",
+					"name": "id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "864181a7-55c1-44d1-bba3-e5c9495b9c9b",
+					"name": "trainer_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "54536860-e2e7-401d-823e-2bdd527b9bd0",
+					"name": "sport_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "9fa5ec4f-37e2-4ea3-85a9-7d14805ededf",
+					"name": "source",
+					"datatype": "varchar",
+					"param": "512",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "71e2f2d4-ade2-42ea-a187-77f9c73dc7c9",
+					"name": "preview",
+					"datatype": "varchar",
+					"param": "65",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "79672ae5-4b3d-474f-a2e4-aed9904db513",
+					"name": "price",
+					"datatype": "money",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "64b7ec45-d905-4054-a451-c176d185a87d",
+					"name": "name",
+					"datatype": "nvarchar",
+					"param": "100",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "98fdd4ac-d807-4d4d-b2fc-d16b1b914698",
+					"name": "description",
+					"datatype": "nvarchar",
+					"param": "400",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"f849c6bd-8fc4-45c9-90ea-3b721d6c9b1d",
+				"23a83529-abd3-45c3-8f28-61d12e8316f8"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "3988572c-d165-45a1-9b2c-78dcec3208b8",
+					"name": "table1_pkey9",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "0843fbc9-1ee6-48cb-b5d4-8f08b77504cb",
+							"colid": "d93c0553-23b0-4190-9d96-5e091b603158"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"6c557a1f-1e15-438d-bf97-c6465f30fb32": {
+			"id": "6c557a1f-1e15-438d-bf97-c6465f30fb32",
+			"visible": true,
+			"name": "timecode",
+			"desc": "Тайм-код - это временная  метка в видео, которая указывает с чем показать карточку во время проигрывания видео ",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "d386a8e0-7feb-47c9-85d8-e98c4a6483ed",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6fdd8921-c52c-4293-900f-df5fe92f30ff",
+					"name": "video_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "6332d485-dc5d-414a-8992-7d608ef016ff",
+					"name": "stamp",
+					"datatype": "time",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c97bbb13-8f24-433b-b0fb-4b5098233530",
+					"name": "source",
+					"datatype": "varchar",
+					"param": "65",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"15cdda22-bac1-4e73-9c3e-3ea4a1feb5d7"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "abc94540-ee19-4764-93ed-a1fccfaaca88",
+					"name": "table1_pkey10",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "3deff3f0-b8cc-4e14-8dc4-dbd70e8044be",
+							"colid": "d386a8e0-7feb-47c9-85d8-e98c4a6483ed"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"18a3f232-78f3-4488-b95a-215e4eabeee3": {
+			"id": "18a3f232-78f3-4488-b95a-215e4eabeee3",
+			"visible": true,
+			"name": "like",
+			"desc": " Лайк - это оценка пользователем видео опубликованным тренером",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "4f1be614-198d-45cd-9393-64e65e1dff1d",
+					"name": "user_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "67be0edb-4c09-4644-a962-36d0d70e108f",
+					"name": "video_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"ce6dc1ec-adad-4abe-8bc3-6e449724a98d",
+				"f405bbb4-9f10-4395-89ed-2c95e2f3cad3"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "811de548-dabf-4270-83b6-52c774a2d565",
+					"name": "table1_pkey11",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "1904e0f3-ed30-40c1-bd16-c297394d2134",
+							"colid": "4f1be614-198d-45cd-9393-64e65e1dff1d"
+						},
+						{
+							"id": "8ce18d93-9040-4552-8df7-ab6841b6a9e2",
+							"colid": "67be0edb-4c09-4644-a962-36d0d70e108f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"abb6bd11-cb34-4ebe-9606-188b3efeca08": {
+			"id": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+			"visible": true,
+			"name": "comment",
+			"desc": "Комментарий - это мысли пользователя о видео, на каждый комментарий могут быть ответы, на ответы еще комментарии, образую ветвистую структуру в reddit стиле",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "61269eff-3e38-46ca-9f65-ad91e26b7efd",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "46c37043-ca49-4eac-bbd7-eaed5000da65",
+					"name": "user_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "54ec2ad7-cb44-4c82-bf2a-e786895533e1",
+					"name": "video_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "04794ddf-3b3f-43fd-b2c9-d108d9297f68",
+					"name": "comment_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"0b3e3d5e-1ef4-4b8e-8943-c284ce95739c",
+				"80891c28-2df0-45d1-922d-adffbe9d5c52",
+				"6e0ee4fa-96a3-46b6-bd86-930e22ed44e8"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "6b3e43a4-94ea-491c-92b0-886cae070094",
+					"name": "table1_pkey12",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "c5ded9f9-6c81-45ac-b15b-38031fea8e3e",
+							"colid": "61269eff-3e38-46ca-9f65-ad91e26b7efd"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"6dda561b-ab37-496a-b1f9-657095fc7da8": {
+			"id": "6dda561b-ab37-496a-b1f9-657095fc7da8",
+			"visible": true,
+			"name": "cart",
+			"desc": "Корзина - это сущность, которая обозначает текущий экземпляр корзины, по идентификатору которой добавляются товары",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "b320e9f5-7abd-4d00-b02b-b9ef821c3f09",
+					"name": "id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c3628e28-7271-479f-bb0f-4ff3cd99a2a8",
+					"name": "user_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"89fc8c26-022e-496b-9f42-aca215465f35",
+				"6dc4096e-4a33-403d-9e48-6c032bf83611"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "a5cb1c30-8a4c-4a61-9e7e-2729255d8f45",
+					"name": "table1_pkey13",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "41f3e944-2187-41c7-8c05-0beb823cd9d4",
+							"colid": "b320e9f5-7abd-4d00-b02b-b9ef821c3f09"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"4109808c-0e84-43fe-a1f0-41ae708578a9": {
+			"id": "4109808c-0e84-43fe-a1f0-41ae708578a9",
+			"visible": true,
+			"name": "cart_content",
+			"desc": "Содержимое корзины - это набор продуктов и их количество, привязанный к экземплярам корзины",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "5f044b7b-486c-4dfb-8f83-6b86d5d208bc",
+					"name": "id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "ed144737-51b5-4da2-ac5d-9078b01b4646",
+					"name": "product_id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "08a0d0fb-2b02-4479-a67a-e929d22cf6c1",
+					"name": "amount",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"6dc4096e-4a33-403d-9e48-6c032bf83611",
+				"23a83529-abd3-45c3-8f28-61d12e8316f8"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ddbc1fad-4d18-4d3b-8e5a-700a29c42292",
+					"name": "table1_pkey14",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "1a13ab2c-f483-439a-8d65-84db5fee819f",
+							"colid": "5f044b7b-486c-4dfb-8f83-6b86d5d208bc"
+						},
+						{
+							"id": "10b41be0-8670-4fd6-b838-c5a1cd6fd287",
+							"colid": "ed144737-51b5-4da2-ac5d-9078b01b4646"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9": {
+			"id": "4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9",
+			"visible": true,
+			"name": "course_access",
+			"desc": "Доступ к курсу - это сущность которая открывает доступ к курсам",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "7a817e53-8239-4640-bbad-4eb69e8a86d1",
+					"name": "user_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "7199a5b7-8a7d-42c9-b6b4-b8200f73ff82",
+					"name": "course_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "993aea7c-9894-4ed9-9ed6-4ee3b9eb19de",
+					"name": "purchase_date",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "GETDATE()",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"1f40bcc6-a828-4aa5-9349-86153b1f546f",
+				"eb7915d0-0b6c-4d83-893e-29d9e4541273"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "97f85821-ef9d-4c09-838e-8d04c17812a8",
+					"name": "table1_pkey15",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "61c8b9e6-5f8a-4895-8b96-655b39da81cb",
+							"colid": "7a817e53-8239-4640-bbad-4eb69e8a86d1"
+						},
+						{
+							"id": "5593906c-1c08-4fff-8c7a-6c26cb7096a8",
+							"colid": "7199a5b7-8a7d-42c9-b6b4-b8200f73ff82"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"f7ea1877-f9f7-4d74-a580-d9964aed5e0e": {
+			"id": "f7ea1877-f9f7-4d74-a580-d9964aed5e0e",
+			"visible": true,
+			"name": "video_part",
+			"desc": "Часть видео - это сущность определяющая  ссылку на файловом сервере",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "954a762c-7eae-4847-85be-8a8c5c477cd5",
+					"name": "id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "31045545-aa4a-4f4b-b5a9-ceb4837eef9d",
+					"name": "video_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "8bcf004d-b152-40dc-9da6-c60dc2cf7d02",
+					"name": "source",
+					"datatype": "varchar",
+					"param": "65",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"e2fe2eee-98ec-4323-8b85-7d494a8cf2f3"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "7b6b68b3-663c-4702-b6fe-925efab1403a",
+					"name": "table1_pkey16",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "9efd4d2c-de43-4a29-99b0-53f9cbb66c5b",
+							"colid": "954a762c-7eae-4847-85be-8a8c5c477cd5"
+						},
+						{
+							"id": "daea6e09-211c-48ad-8d5b-f4fb981f5fa6",
+							"colid": "31045545-aa4a-4f4b-b5a9-ceb4837eef9d"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		},
+		"9590c457-ea26-49a3-af81-8fbae08d5202": {
+			"id": "9590c457-ea26-49a3-af81-8fbae08d5202",
+			"visible": true,
+			"name": "tag",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "41586f25-45e2-4fca-9f53-222dddf7b608",
+					"name": "id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9eb94c68-f2c0-4274-a025-f473aeb66f30",
+					"name": "video_id",
+					"datatype": "bigint",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "46b7c222-66aa-4e6c-88a3-e46e98f5d38c",
+					"name": "value",
+					"datatype": "nvarchar",
+					"param": "30",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"49e81fdc-b1a0-43ad-bd44-a593dd7a4866"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "77906ffe-d4b5-4b7c-be06-5eb8e9eb4fc3",
+					"name": "table1_pkey17",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "b377838d-14cc-43eb-b369-a2e8a19712b0",
+							"colid": "41586f25-45e2-4fca-9f53-222dddf7b608"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": "sf"
+			}
+		}
+	},
+	"relations": {
+		"9ebeb562-6b0e-4eef-b784-52ce852ee537": {
+			"id": "9ebeb562-6b0e-4eef-b784-52ce852ee537",
+			"visible": true,
+			"name": "message_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "6b80d8a8-e176-4364-979a-657cf1585c4d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "bb1fac69-2e74-41c6-b227-ab9a37c14062",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "e5034938-5fc2-4637-af4f-093b97797ac6"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"51894966-bbf1-4f1d-ae7b-fd49a6c27eee": {
+			"id": "51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
+			"visible": true,
+			"name": "message_user_id_fkey1",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "6b80d8a8-e176-4364-979a-657cf1585c4d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a831dc7b-6761-4a7a-9e67-ec988d72a45d",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "279be83f-575b-4d3d-aa7c-bfaf1753083b"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"de0fd474-811b-47fb-812b-b1e07db3f1bf": {
+			"id": "de0fd474-811b-47fb-812b-b1e07db3f1bf",
+			"visible": true,
+			"name": "trainer_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "879dcb3b-8e85-45ff-95ff-10d74034dabb",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "122aac11-ca0b-42cf-a56b-216d003d8bc4",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "1f712a46-7599-4611-b93c-5273aa05cdde"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"1a820817-ae26-4043-b4b8-2281be30f1ee": {
+			"id": "1a820817-ae26-4043-b4b8-2281be30f1ee",
+			"visible": true,
+			"name": "subcription_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "84031d3d-4f98-4e15-9ab4-c44115a9b722",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "97a59a12-7173-4b9d-99ab-f628d4cec996"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"9f22f7ff-ed94-4a4b-b3a5-b6874213e957": {
+			"id": "9f22f7ff-ed94-4a4b-b3a5-b6874213e957",
+			"visible": true,
+			"name": "subcription_trainer_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "925f971c-38a3-4fd6-b385-41538f8806f7",
+			"parent": "879dcb3b-8e85-45ff-95ff-10d74034dabb",
+			"child": "cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "72a6cfdb-417b-4e22-948c-735dc65d1a92",
+					"parentcol": "1f712a46-7599-4611-b93c-5273aa05cdde",
+					"childcol": "268e1f71-0f88-4ca7-948c-a7b7c0a22cad"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"6df8e6eb-d313-4155-86b2-c8ddf9f6ec5a": {
+			"id": "6df8e6eb-d313-4155-86b2-c8ddf9f6ec5a",
+			"visible": true,
+			"name": "specialisation_trainer_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "925f971c-38a3-4fd6-b385-41538f8806f7",
+			"parent": "879dcb3b-8e85-45ff-95ff-10d74034dabb",
+			"child": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "19bcbd0d-a67d-48b8-aa62-2a631bf0c6be",
+					"parentcol": "1f712a46-7599-4611-b93c-5273aa05cdde",
+					"childcol": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"a93ab03c-5e48-4115-841d-cf3bba96c90b": {
+			"id": "a93ab03c-5e48-4115-841d-cf3bba96c90b",
+			"visible": true,
+			"name": "specialisation_sport_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "4796b0e5-da30-4cf9-a1b7-6482aa1fcf07",
+			"parent": "e88a42a6-c179-46ff-8433-f178825d1074",
+			"child": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "d8bc836e-128f-43f1-83f1-849608e2ac42",
+					"parentcol": "871eb31f-3582-4889-9bdc-8f27014cb549",
+					"childcol": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"3abcb179-84e2-441a-af2c-0198218b839c": {
+			"id": "3abcb179-84e2-441a-af2c-0198218b839c",
+			"visible": true,
+			"name": "course_specialisation_trainer_id_specialisation_sport_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "0e70b318-d821-4843-8bdb-b252a72f9269",
+			"parent": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"child": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "6a70d9ae-5161-4ad0-8f75-c449db7e2f3a",
+					"parentcol": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46",
+					"childcol": "76bdf5fc-6c2d-443e-a0da-dd32ea8e7786"
+				},
+				{
+					"id": "b18a874a-b3a4-4b60-8e70-5c97a092cac7",
+					"parentcol": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8",
+					"childcol": "27097c6d-43be-4e70-8478-52808f1b7793"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"4bc547e0-4d4a-4c96-a38b-5a012186cead": {
+			"id": "4bc547e0-4d4a-4c96-a38b-5a012186cead",
+			"visible": true,
+			"name": "post_specialisation_trainer_id_specialisation_sport_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "0e70b318-d821-4843-8bdb-b252a72f9269",
+			"parent": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"child": "f16c9b02-ded2-4c8e-bb90-f10fec9c05aa",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "0d2517ad-42ba-4b47-9f6c-0e9e254da1e7",
+					"parentcol": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46",
+					"childcol": "c801d6aa-b638-4fdd-a591-1e9a19fd4ac5"
+				},
+				{
+					"id": "98f08480-099a-4f4d-8e31-04ce5d34423e",
+					"parentcol": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8",
+					"childcol": "de60cf47-8a33-4385-964f-b8182ef637e8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"d115c787-83b9-46e0-9a58-1b4c7a50b6a4": {
+			"id": "d115c787-83b9-46e0-9a58-1b4c7a50b6a4",
+			"visible": true,
+			"name": "post_course_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "b3ba1a9f-0525-4b5f-b0de-b85a2a18748c",
+			"parent": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+			"child": "f16c9b02-ded2-4c8e-bb90-f10fec9c05aa",
+			"c_mp": "true",
+			"c_mch": "false",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "0f1171b6-844d-4531-9480-7ca6a66627ef",
+					"parentcol": "6f19e9b9-f46b-412f-9a5b-3282c6036830",
+					"childcol": "2fb42f2b-546a-4dd7-bac0-7283ba78f40f"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"2bad06bf-cb28-467d-9781-cd531cdf9d8f": {
+			"id": "2bad06bf-cb28-467d-9781-cd531cdf9d8f",
+			"visible": true,
+			"name": "video_specialisation_trainer_id_specialisation_sport_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "0e70b318-d821-4843-8bdb-b252a72f9269",
+			"parent": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"child": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "963450c5-87b4-42a4-8379-687d5864058b",
+					"parentcol": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46",
+					"childcol": "d5060d6f-ebd5-4803-bf26-024d58160583"
+				},
+				{
+					"id": "81106afe-bd86-410f-8744-c2e9830d3a80",
+					"parentcol": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8",
+					"childcol": "50f1a41b-9ff1-4c7f-9d48-f45680bf1e6a"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"6067a671-58fb-4952-8bf9-2e87b457c50c": {
+			"id": "6067a671-58fb-4952-8bf9-2e87b457c50c",
+			"visible": true,
+			"name": "video_course_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "b3ba1a9f-0525-4b5f-b0de-b85a2a18748c",
+			"parent": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+			"child": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "3e692c71-2d4b-4052-81e4-8ce6819cde48",
+					"parentcol": "6f19e9b9-f46b-412f-9a5b-3282c6036830",
+					"childcol": "60530bab-96f0-4549-81a2-d9357230e442"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"f849c6bd-8fc4-45c9-90ea-3b721d6c9b1d": {
+			"id": "f849c6bd-8fc4-45c9-90ea-3b721d6c9b1d",
+			"visible": true,
+			"name": "product_specialisation_trainer_id_specialisation_sport_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "0e70b318-d821-4843-8bdb-b252a72f9269",
+			"parent": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+			"child": "7ed328bd-4e74-49b3-87d4-89eca0690787",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a004f77d-6fb4-4cf4-b3e7-077aaf6c61b9",
+					"parentcol": "0bd4a783-876f-44b1-b33f-92a7b9cf4a46",
+					"childcol": "864181a7-55c1-44d1-bba3-e5c9495b9c9b"
+				},
+				{
+					"id": "62d0dd5c-6659-4506-8375-689315aee3a4",
+					"parentcol": "228dfe7c-71a4-4f5e-bdc9-32821a6472b8",
+					"childcol": "54536860-e2e7-401d-823e-2bdd527b9bd0"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"15cdda22-bac1-4e73-9c3e-3ea4a1feb5d7": {
+			"id": "15cdda22-bac1-4e73-9c3e-3ea4a1feb5d7",
+			"visible": true,
+			"name": "timecode_video_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+			"parent": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"child": "6c557a1f-1e15-438d-bf97-c6465f30fb32",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "3d09db08-0197-4175-b031-15b7a9a77b59",
+					"parentcol": "0421319f-634d-4678-853c-79533b3009d4",
+					"childcol": "6fdd8921-c52c-4293-900f-df5fe92f30ff"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"ce6dc1ec-adad-4abe-8bc3-6e449724a98d": {
+			"id": "ce6dc1ec-adad-4abe-8bc3-6e449724a98d",
+			"visible": true,
+			"name": "like_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "18a3f232-78f3-4488-b95a-215e4eabeee3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "1f5adcb5-cf3c-482e-bb86-5e49b0edfd8c",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "4f1be614-198d-45cd-9393-64e65e1dff1d"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"f405bbb4-9f10-4395-89ed-2c95e2f3cad3": {
+			"id": "f405bbb4-9f10-4395-89ed-2c95e2f3cad3",
+			"visible": true,
+			"name": "like_video_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+			"parent": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"child": "18a3f232-78f3-4488-b95a-215e4eabeee3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "929fa101-664f-4c5d-b572-00adaa5e57e7",
+					"parentcol": "0421319f-634d-4678-853c-79533b3009d4",
+					"childcol": "67be0edb-4c09-4644-a962-36d0d70e108f"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"0b3e3d5e-1ef4-4b8e-8943-c284ce95739c": {
+			"id": "0b3e3d5e-1ef4-4b8e-8943-c284ce95739c",
+			"visible": true,
+			"name": "comment_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a7c8c25c-e5e2-47e3-8e21-7bb51c6e7afa",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "46c37043-ca49-4eac-bbd7-eaed5000da65"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"80891c28-2df0-45d1-922d-adffbe9d5c52": {
+			"id": "80891c28-2df0-45d1-922d-adffbe9d5c52",
+			"visible": true,
+			"name": "comment_video_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+			"parent": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"child": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "fa578720-a0b6-4939-9f39-6848c7cc28bb",
+					"parentcol": "0421319f-634d-4678-853c-79533b3009d4",
+					"childcol": "54ec2ad7-cb44-4c82-bf2a-e786895533e1"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"6e0ee4fa-96a3-46b6-bd86-930e22ed44e8": {
+			"id": "6e0ee4fa-96a3-46b6-bd86-930e22ed44e8",
+			"visible": true,
+			"name": "comment_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "6b3e43a4-94ea-491c-92b0-886cae070094",
+			"parent": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+			"child": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+			"c_mp": "true",
+			"c_mch": "false",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "91202a63-0ea1-49f2-ba3b-4b97478abda1",
+					"parentcol": "61269eff-3e38-46ca-9f65-ad91e26b7efd",
+					"childcol": "04794ddf-3b3f-43fd-b2c9-d108d9297f68"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"89fc8c26-022e-496b-9f42-aca215465f35": {
+			"id": "89fc8c26-022e-496b-9f42-aca215465f35",
+			"visible": true,
+			"name": "cart_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "6dda561b-ab37-496a-b1f9-657095fc7da8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "9bca4ad4-daf5-4200-87b9-48e7ffa90773",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "c3628e28-7271-479f-bb0f-4ff3cd99a2a8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"6dc4096e-4a33-403d-9e48-6c032bf83611": {
+			"id": "6dc4096e-4a33-403d-9e48-6c032bf83611",
+			"visible": true,
+			"name": "cart_content_cart_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "a5cb1c30-8a4c-4a61-9e7e-2729255d8f45",
+			"parent": "6dda561b-ab37-496a-b1f9-657095fc7da8",
+			"child": "4109808c-0e84-43fe-a1f0-41ae708578a9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "abfd212e-8ca2-4ea0-b1b4-ab334203df45",
+					"parentcol": "b320e9f5-7abd-4d00-b02b-b9ef821c3f09",
+					"childcol": "5f044b7b-486c-4dfb-8f83-6b86d5d208bc"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"23a83529-abd3-45c3-8f28-61d12e8316f8": {
+			"id": "23a83529-abd3-45c3-8f28-61d12e8316f8",
+			"visible": true,
+			"name": "cart_content_product_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "3988572c-d165-45a1-9b2c-78dcec3208b8",
+			"parent": "7ed328bd-4e74-49b3-87d4-89eca0690787",
+			"child": "4109808c-0e84-43fe-a1f0-41ae708578a9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "53284a53-216b-4fd5-906d-df447cd719be",
+					"parentcol": "d93c0553-23b0-4190-9d96-5e091b603158",
+					"childcol": "ed144737-51b5-4da2-ac5d-9078b01b4646"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"1f40bcc6-a828-4aa5-9349-86153b1f546f": {
+			"id": "1f40bcc6-a828-4aa5-9349-86153b1f546f",
+			"visible": true,
+			"name": "course_access_user_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
+			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+			"child": "4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "08b78bc0-2269-40b4-bf69-138455679809",
+					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
+					"childcol": "7a817e53-8239-4640-bbad-4eb69e8a86d1"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"eb7915d0-0b6c-4d83-893e-29d9e4541273": {
+			"id": "eb7915d0-0b6c-4d83-893e-29d9e4541273",
+			"visible": true,
+			"name": "course_access_course_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "b3ba1a9f-0525-4b5f-b0de-b85a2a18748c",
+			"parent": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+			"child": "4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "5286b621-18ff-416c-8dc5-521937ddad32",
+					"parentcol": "6f19e9b9-f46b-412f-9a5b-3282c6036830",
+					"childcol": "7199a5b7-8a7d-42c9-b6b4-b8200f73ff82"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"e2fe2eee-98ec-4323-8b85-7d494a8cf2f3": {
+			"id": "e2fe2eee-98ec-4323-8b85-7d494a8cf2f3",
+			"visible": true,
+			"name": "video_part_video_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+			"parent": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"child": "f7ea1877-f9f7-4d74-a580-d9964aed5e0e",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "bd232f73-1b2e-403c-b178-cfa5f8d4b9f6",
+					"parentcol": "0421319f-634d-4678-853c-79533b3009d4",
+					"childcol": "31045545-aa4a-4f4b-b5a9-ceb4837eef9d"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"49e81fdc-b1a0-43ad-bd44-a593dd7a4866": {
+			"id": "49e81fdc-b1a0-43ad-bd44-a593dd7a4866",
+			"visible": true,
+			"name": "tag_video_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "37a01d5c-d488-4f0b-9755-327d9f5caa5c",
+			"parent": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+			"child": "9590c457-ea26-49a3-af81-8fbae08d5202",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "44daf337-0e31-46ac-9724-4c21471fe18b",
+					"parentcol": "0421319f-634d-4678-853c-79533b3009d4",
+					"childcol": "9eb94c68-f2c0-4274-a025-f473aeb66f30"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "safit",
+		"id": "2148c201-aad1-46b8-9a2e-2d72d1b85ff8",
+		"activeDiagram": "4ba67eef-a86b-4b12-ab07-de90dc4440ef",
+		"desc": "",
+		"path": "",
+		"type": "MSSQL",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 7,
+			"minor": 5,
+			"extra": 0
+		},
+		"laststoredin": {
+			"major": 7,
+			"minor": 5,
+			"extra": 0
+		},
+		"writeFileParam": false,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"def_coltopk": true,
+		"mssql": {
+			"schema": ""
+		},
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": "GO",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"includeSchema": "always",
+			"quotation": "if_needed",
+			"includeGeneratedNames": "always",
+			"quotationType": "square_brackets"
+		},
+		"nameAutoGeneration": {
+			"keys": true,
+			"indexes": true,
+			"relations": true
+		},
+		"lastSaved": 1701800961068
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"4ba67eef-a86b-4b12-ab07-de90dc4440ef": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "4ba67eef-a86b-4b12-ab07-de90dc4440ef",
+			"keysgraphics": false,
+			"linegraphics": "basic",
+			"zoom": 0.7,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"2965bc69-6880-4c6c-8f8c-7e633f44c496": {
+					"referencedItemId": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
+					"x": 657,
+					"y": 303,
+					"gHeight": 189,
+					"gWidth": 220,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"6b80d8a8-e176-4364-979a-657cf1585c4d": {
+					"referencedItemId": "6b80d8a8-e176-4364-979a-657cf1585c4d",
+					"x": 324,
+					"y": 305,
+					"gHeight": 99,
+					"gWidth": 202,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"879dcb3b-8e85-45ff-95ff-10d74034dabb": {
+					"referencedItemId": "879dcb3b-8e85-45ff-95ff-10d74034dabb",
+					"x": 656,
+					"y": 588,
+					"gHeight": 45,
+					"gWidth": 141,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"cfc4387e-6f6d-427a-ad54-1009e2b9a7f7": {
+					"referencedItemId": "cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
+					"x": 334,
+					"y": 578,
+					"gHeight": 63,
+					"gWidth": 184,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"e88a42a6-c179-46ff-8433-f178825d1074": {
+					"referencedItemId": "e88a42a6-c179-46ff-8433-f178825d1074",
+					"x": 332,
+					"y": 706,
+					"gHeight": 81,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f": {
+					"referencedItemId": "88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+					"x": 659,
+					"y": 712,
+					"gHeight": 63,
+					"gWidth": 184,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"5d2a8c45-3a16-4d5b-b72c-e13a20a2b086": {
+					"referencedItemId": "5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+					"x": 940,
+					"y": 682,
+					"gHeight": 135,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"f16c9b02-ded2-4c8e-bb90-f10fec9c05aa": {
+					"referencedItemId": "f16c9b02-ded2-4c8e-bb90-f10fec9c05aa",
+					"x": 640,
+					"y": 941,
+					"gHeight": 153,
+					"gWidth": 222,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"b657d3c4-1dee-4a2a-bba6-0871c562efd3": {
+					"referencedItemId": "b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+					"x": 943,
+					"y": 942,
+					"gHeight": 153,
+					"gWidth": 184,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"7ed328bd-4e74-49b3-87d4-89eca0690787": {
+					"referencedItemId": "7ed328bd-4e74-49b3-87d4-89eca0690787",
+					"x": 942,
+					"y": 480,
+					"gHeight": 171,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"6c557a1f-1e15-438d-bf97-c6465f30fb32": {
+					"referencedItemId": "6c557a1f-1e15-438d-bf97-c6465f30fb32",
+					"x": 940,
+					"y": 1206,
+					"gHeight": 99,
+					"gWidth": 197,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"18a3f232-78f3-4488-b95a-215e4eabeee3": {
+					"referencedItemId": "18a3f232-78f3-4488-b95a-215e4eabeee3",
+					"x": 1420,
+					"y": 283,
+					"gHeight": 63,
+					"gWidth": 177,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"abb6bd11-cb34-4ebe-9606-188b3efeca08": {
+					"referencedItemId": "abb6bd11-cb34-4ebe-9606-188b3efeca08",
+					"x": 1190,
+					"y": 354,
+					"gHeight": 99,
+					"gWidth": 200,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"6dda561b-ab37-496a-b1f9-657095fc7da8": {
+					"referencedItemId": "6dda561b-ab37-496a-b1f9-657095fc7da8",
+					"x": 656,
+					"y": 98,
+					"gHeight": 63,
+					"gWidth": 171,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"4109808c-0e84-43fe-a1f0-41ae708578a9": {
+					"referencedItemId": "4109808c-0e84-43fe-a1f0-41ae708578a9",
+					"x": 968,
+					"y": 87,
+					"gHeight": 81,
+					"gWidth": 175,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9": {
+					"referencedItemId": "4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9",
+					"x": 1667,
+					"y": 185,
+					"gHeight": 81,
+					"gWidth": 230,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"f7ea1877-f9f7-4d74-a580-d9964aed5e0e": {
+					"referencedItemId": "f7ea1877-f9f7-4d74-a580-d9964aed5e0e",
+					"x": 1160,
+					"y": 1207,
+					"gHeight": 95,
+					"gWidth": 194,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"9590c457-ea26-49a3-af81-8fbae08d5202": {
+					"referencedItemId": "9590c457-ea26-49a3-af81-8fbae08d5202",
+					"x": 734,
+					"y": 1206,
+					"gHeight": 99,
+					"gWidth": 192,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				}
+			},
+			"scroll": {
+				"x": 73,
+				"y": 28
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": true,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": false,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": true,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent",
+			"embeddedSpacing": "2",
+			"showMainIcon": true,
+			"showLabels": true
+		}
+	},
+	"order": [
+		"2965bc69-6880-4c6c-8f8c-7e633f44c496",
+		"6b80d8a8-e176-4364-979a-657cf1585c4d",
+		"879dcb3b-8e85-45ff-95ff-10d74034dabb",
+		"cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
+		"e88a42a6-c179-46ff-8433-f178825d1074",
+		"88b77f4b-34a4-4d22-ad29-6f5b0bb22e0f",
+		"5d2a8c45-3a16-4d5b-b72c-e13a20a2b086",
+		"f16c9b02-ded2-4c8e-bb90-f10fec9c05aa",
+		"b657d3c4-1dee-4a2a-bba6-0871c562efd3",
+		"7ed328bd-4e74-49b3-87d4-89eca0690787",
+		"6c557a1f-1e15-438d-bf97-c6465f30fb32",
+		"18a3f232-78f3-4488-b95a-215e4eabeee3",
+		"abb6bd11-cb34-4ebe-9606-188b3efeca08",
+		"6dda561b-ab37-496a-b1f9-657095fc7da8",
+		"4109808c-0e84-43fe-a1f0-41ae708578a9",
+		"4f6712a2-07dc-48b7-b6fa-4aaa8b9049e9",
+		"f7ea1877-f9f7-4d74-a580-d9964aed5e0e",
+		"9590c457-ea26-49a3-af81-8fbae08d5202",
+		"9ebeb562-6b0e-4eef-b784-52ce852ee537",
+		"51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
+		"de0fd474-811b-47fb-812b-b1e07db3f1bf",
+		"1a820817-ae26-4043-b4b8-2281be30f1ee",
+		"9f22f7ff-ed94-4a4b-b3a5-b6874213e957",
+		"6df8e6eb-d313-4155-86b2-c8ddf9f6ec5a",
+		"a93ab03c-5e48-4115-841d-cf3bba96c90b",
+		"3abcb179-84e2-441a-af2c-0198218b839c",
+		"4bc547e0-4d4a-4c96-a38b-5a012186cead",
+		"d115c787-83b9-46e0-9a58-1b4c7a50b6a4",
+		"2bad06bf-cb28-467d-9781-cd531cdf9d8f",
+		"6067a671-58fb-4952-8bf9-2e87b457c50c",
+		"f849c6bd-8fc4-45c9-90ea-3b721d6c9b1d",
+		"15cdda22-bac1-4e73-9c3e-3ea4a1feb5d7",
+		"ce6dc1ec-adad-4abe-8bc3-6e449724a98d",
+		"f405bbb4-9f10-4395-89ed-2c95e2f3cad3",
+		"0b3e3d5e-1ef4-4b8e-8943-c284ce95739c",
+		"80891c28-2df0-45d1-922d-adffbe9d5c52",
+		"6e0ee4fa-96a3-46b6-bd86-930e22ed44e8",
+		"89fc8c26-022e-496b-9f42-aca215465f35",
+		"6dc4096e-4a33-403d-9e48-6c032bf83611",
+		"23a83529-abd3-45c3-8f28-61d12e8316f8",
+		"1f40bcc6-a828-4aa5-9349-86153b1f546f",
+		"eb7915d0-0b6c-4d83-893e-29d9e4541273",
+		"e2fe2eee-98ec-4323-8b85-7d494a8cf2f3",
+		"49e81fdc-b1a0-43ad-bd44-a593dd7a4866"
+	],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}

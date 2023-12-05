@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Safit.Core.DataAccess.Context;
-using Safit.Core.Services.Authorisation.Exceptions;
+﻿using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -9,16 +6,14 @@ namespace Safit.Core.Services.Authorisation;
 
 public sealed class AuthorisationService : IAuthorisationService
 {
-    private SafitDbContext context;
     private IConfiguration configuration;
 
-    public AuthorisationService(SafitDbContext context, IConfiguration configuration)
+    public AuthorisationService(IConfiguration configuration)
     {
         this.configuration = configuration;
-        this.context = context;
     }
 
-    public async Task<User> LoginAsync(string username, string password, CancellationToken cancellationToken)
+    public async Task LoginAsync(string username, string password, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
         //var user = await context.Users.Where(x => x.Username == username && x.PasswordHash == EncryptPassword(password)).FirstOrDefaultAsync(cancellationToken);
@@ -26,7 +21,7 @@ public sealed class AuthorisationService : IAuthorisationService
         //return user;
     }
 
-    public async Task<User> RegisterAsync(string username, string password, CancellationToken cancellationToken)
+    public async Task RegisterAsync(string username, string password, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
         //var user = new User()

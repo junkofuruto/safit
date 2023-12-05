@@ -1,8 +1,6 @@
-﻿using Safit.Core.Domain.Entities;
-
-namespace Safit.Core.Services.Authentification;
+﻿namespace Safit.Core.Services.Authentification;
 
 public interface IBearerTokenDispatcherService
 {
-    public Task<User> ExtractUserAsync(string tokenString);
+    public Task ExtractUserAsync(string tokenString);
 }
