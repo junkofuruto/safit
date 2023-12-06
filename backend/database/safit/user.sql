@@ -9,6 +9,7 @@ CREATE PROCEDURE sf.pc_user_generate_usertoken @result VARCHAR(100) OUTPUT AS BE
 	SET @base64token = REPLACE(REPLACE(@base64token, '+', 'A'), '/', 'B');
 	SET @result = LEFT(@base64token, 100)
 END GO
+
 CREATE PROCEDURE sf.pc_user_confirm_identity
 (
 	@p_user_id BIGINT,
@@ -18,6 +19,7 @@ CREATE PROCEDURE sf.pc_user_confirm_identity
 	IF EXISTS (SELECT * FROM sf.[user] WHERE [id] = @p_user_id AND [token] = @p_token) SET @confirmed = 1;
     ELSE SET @confirmed = 0;
 END GO
+
 CREATE PROCEDURE sf.pc_user_drop_token 
 (
 	@p_user_id BIGINT,
@@ -31,6 +33,7 @@ CREATE PROCEDURE sf.pc_user_drop_token
 	UPDATE sf.[user] SET [token] = @new_token WHERE [id] = @p_user_id
 	SELECT 'SUC.TOKEN_DROPPED' AS [message]
 END GO
+
 CREATE PROCEDURE sf.pc_user_login
 (
 	@p_username NVARCHAR(32),
@@ -53,6 +56,7 @@ CREATE PROCEDURE sf.pc_user_login
 		@user_promoted AS is_trainer 
 	FROM sf.[user] WHERE [id] = @user_id END;
 END GO
+
 CREATE PROCEDURE sf.pc_user_register
 (
 	@p_username NVARCHAR(32),
@@ -84,7 +88,6 @@ CREATE PROCEDURE sf.pc_user_update_data
 	@p_id BIGINT,
 	@p_token VARCHAR(100),
 	@p_email NVARCHAR(64),
-	@p_password NVARCHAR(32),
 	@p_first_name NVARCHAR(32),
 	@p_last_name NVARCHAR(32),
 	@p_profile_src VARCHAR(65) NULL
@@ -96,7 +99,6 @@ CREATE PROCEDURE sf.pc_user_update_data
 		BEGIN TRANSACTION;
 		UPDATE sf.[user] SET
 			[email] = @p_email,
-			[password] = HASHBYTES('SHA2_256', @p_password),
 			[first_name] = @p_first_name,
 			[last_name] = @p_last_name,
 			[profile_src] = @p_profile_src
@@ -113,6 +115,7 @@ CREATE PROCEDURE sf.pc_user_update_data
 		SELECT 'SUC.CHANGES_COMMITED' AS [message];
 	END;
 END GO
+
 CREATE PROCEDURE sf.pc_user_update_balance
 (
 	@p_id BIGINT,
@@ -130,6 +133,21 @@ CREATE PROCEDURE sf.pc_user_update_balance
 		SELECT 'SUC.BALANCE_CHANGED' AS [message];
 	END;
 END GO
+
+CREATE PROCEDURE sf.pc_user_buy_course
+(
+	@p_user_id BIGINT,
+	@p_token VARCHAR(100),
+	@p_course_id BIGINT
+) AS BEGIN
+	DECLARE @price MONEY;
+	SELECT @price = [price] * -1 FROM sf.course WHERE [id] = @p_course_id;
+	IF (@price = NULL) BEGIN
+		SELECT 'ERR.COURSE_NOT_EXIST'
+	END ELSE BEGIN
+		EXEC sf.pc_user_update_balance @p_user_id, @p_token, @price
+	END
+END;
 
 EXEC sf.pc_user_drop_token 0, 'P6MpUJm5qp0f89jnzTSc6h2AroxwphiNycAE3oLie5JGyLrHCEGRWl0B6M2ZjkiCcaVVov1wdacFBvwPrvIFIDLThrDdA6U5KLvO';
 EXEC sf.pc_user_login 'admin', '12345223';

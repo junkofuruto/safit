@@ -50,6 +50,7 @@ CREATE TABLE sf.[sport]
 	[id]				BIGINT NOT NULL,
 	[name]				NVARCHAR(30) NOT NULL,
 	[description]		NVARCHAR(200) NOT NULL,
+	[preview_src]		VARCHAR(65) NOT NULL,
 
 	PRIMARY KEY ([id])				
 )
@@ -183,3 +184,33 @@ CREATE TABLE sf.[course_access]
 	FOREIGN KEY ([course_id]) REFERENCES sf.[course] ([id])
 )
 GO
+
+CREATE TABLE sf.[tag]
+(
+	[id]				BIGINT NOT NULL IDENTITY(0, 1),
+	[video_id]			BIGINT NOT NULL,
+	[name]				NVARCHAR(65) NOT NULL UNIQUE,
+
+	PRIMARY KEY ([id]),
+	FOREIGN KEY ([video_id]) REFERENCES sf.video([id])
+)
+
+CREATE TABLE sf.[recommendation]
+(
+	[user_id]			BIGINT NOT NULL,
+	[tag_id]			BIGINT NOT NULL,
+	[weight]			REAL NOT NULL DEFAULT 0,
+
+	PRIMARY KEY ([user_id], [tag_id]),
+	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
+	FOREIGN KEY ([tag_id]) REFERENCES sf.[tag] ([id])
+)
+
+CREATE TABLE sf.[fetch_source]
+(
+	[video_id]			BIGINT NOT NULL,
+	[source]			VARCHAR(65) NOT NULL,
+
+	PRIMARY KEY ([video_id], [source]),
+	FOREIGN KEY ([video_id]) REFERENCES sf.video ([id])
+)
