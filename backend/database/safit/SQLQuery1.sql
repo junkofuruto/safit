@@ -1,4 +1,0 @@
-USE [safit]
-GO
-
-CREATE PROCEDURE

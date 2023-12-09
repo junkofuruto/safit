@@ -37,11 +37,71 @@
           <AssociatedConnUserName />
           <FullPath>_encryption.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery1.sql">
+        <FileNode Name="cart.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1.sql</FullPath>
+          <FullPath>cart.sql</FullPath>
+        </FileNode>
+        <FileNode Name="comment.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>comment.sql</FullPath>
+        </FileNode>
+        <FileNode Name="course.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>course.sql</FullPath>
+        </FileNode>
+        <FileNode Name="like.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>like.sql</FullPath>
+        </FileNode>
+        <FileNode Name="post.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>post.sql</FullPath>
+        </FileNode>
+        <FileNode Name="product.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>product.sql</FullPath>
+        </FileNode>
+        <FileNode Name="recommendation.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>recommendation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sport.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>sport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="subscription.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>subscription.sql</FullPath>
+        </FileNode>
+        <FileNode Name="trainer.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>trainer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="user.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-6V0D4V5:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-6V0D4V5</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>user.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

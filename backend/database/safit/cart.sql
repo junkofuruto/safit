@@ -10,7 +10,7 @@ CREATE PROCEDURE sf.pc_cart_add_product
 ) AS BEGIN
 	DECLARE @user_exists BIT;
 	EXEC sf.pc_user_confirm_identity @p_user_id, @p_token, @user_exists OUTPUT;
-	IF (@user_exists = 0) BEGIN SELECT 'ERR.USER_DOESNT_EXIST' AS [message] RETURN END;
+	IF (@user_exists = 0) BEGIN SELECT 0 AS [success], 'USER_DOESNT_EXIST' AS [message] RETURN END;
 	DECLARE @last_cart_instance BIGINT;
 	SELECT @last_cart_instance = MAX([id]) FROM sf.cart WHERE [user_id] = @p_user_id
 	BEGIN TRY
@@ -21,10 +21,11 @@ CREATE PROCEDURE sf.pc_cart_add_product
 		END
 	END TRY
 	BEGIN CATCH
-		SELECT 'ERR.UNALE_TO_ADD_PRODUCT' AS [message] RETURN 
+		SELECT 0 AS [success], 'UNALE_TO_ADD_PRODUCT' AS [message] RETURN 
 	END CATCH
-	SELECT 'SUC.PRODUCT_ADDED' AS [message]
-END GO
+	SELECT 1 AS [success], 'PRODUCT_ADDED' AS [message]
+END 
+GO
 
 CREATE PROCEDURE sf.pc_cart_new_instance
 (
@@ -33,7 +34,8 @@ CREATE PROCEDURE sf.pc_cart_new_instance
 ) AS BEGIN
 	DECLARE @user_exists BIT;
 	EXEC sf.pc_user_confirm_identity @p_user_id, @p_token, @user_exists OUTPUT;
-	IF (@user_exists = 0) BEGIN SELECT 'ERR.USER_DOESNT_EXIST' AS [message] RETURN END;
+	IF (@user_exists = 0) BEGIN SELECT 0 AS [success], 'USER_DOESNT_EXIST' AS [message] RETURN END;
 	INSERT INTO sf.cart VALUES (@p_user_id);
-	SELECT 'SUC.INSANCE_CREATED' AS [message];
-END GO
+	SELECT 0 AS [success], 'INSANCE_CREATED' AS [message];
+END 
+GO

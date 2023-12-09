@@ -8,7 +8,8 @@ CREATE PROCEDURE sf.pc_user_generate_usertoken @result VARCHAR(100) OUTPUT AS BE
 	SET @base64token = CAST(N'' AS XML).value('xs:base64Binary(sql:variable("@Token"))', 'VARCHAR(MAX)');
 	SET @base64token = REPLACE(REPLACE(@base64token, '+', 'A'), '/', 'B');
 	SET @result = LEFT(@base64token, 100)
-END GO
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_confirm_identity
 (
@@ -18,7 +19,8 @@ CREATE PROCEDURE sf.pc_user_confirm_identity
 ) AS BEGIN
 	IF EXISTS (SELECT * FROM sf.[user] WHERE [id] = @p_user_id AND [token] = @p_token) SET @confirmed = 1;
     ELSE SET @confirmed = 0;
-END GO
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_drop_token 
 (
@@ -29,10 +31,11 @@ CREATE PROCEDURE sf.pc_user_drop_token
 	DECLARE @user_exists BIT;
 	EXEC sf.pc_user_generate_usertoken @new_token OUTPUT;
 	EXEC sf.pc_user_confirm_identity @p_user_id, @p_token, @user_exists OUTPUT;
-	IF (@user_exists = 0) BEGIN SELECT 'ERR.USER_DOESNT_EXIST' AS [message] RETURN END;
+	IF (@user_exists = 0) BEGIN SELECT 0 AS [success], 'USER_DOESNT_EXIST' AS [message] RETURN END;
 	UPDATE sf.[user] SET [token] = @new_token WHERE [id] = @p_user_id
-	SELECT 'SUC.TOKEN_DROPPED' AS [message]
-END GO
+	SELECT  1 AS [success], 'TOKEN_DROPPED' AS [message]
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_login
 (
@@ -42,20 +45,10 @@ CREATE PROCEDURE sf.pc_user_login
 	DECLARE @user_id BIGINT;
 	DECLARE @e_p_password NVARCHAR(32) = HASHBYTES('SHA2_256', @p_password);
 	SELECT @user_id = id FROM sf.[user] WHERE [username] = @p_username AND [password] = @e_p_password;
-	IF @user_id IS NULL BEGIN SELECT 'ERR.INVALID_PASSWORD_OR_LOGIN' AS [message] RETURN END;
-	DECLARE @user_promoted BIT = 0;
-	IF EXISTS(SELECT [id] FROM sf.trainer WHERE [id] = @user_id) BEGIN SET @user_promoted = 1 END;
-	ELSE BEGIN SELECT 
-		[id], 
-		[email], 
-		[username], 
-		[first_name], 
-		[last_name], 
-		[balance], 
-		[token], 
-		@user_promoted AS is_trainer 
-	FROM sf.[user] WHERE [id] = @user_id END;
-END GO
+	IF @user_id IS NULL BEGIN SELECT 0 AS [success], 'INVALID_PASSWORD_OR_LOGIN' AS [message] RETURN END;
+	ELSE BEGIN SELECT * FROM sf.[user] WHERE [id] = @user_id END;
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_register
 (
@@ -75,13 +68,14 @@ CREATE PROCEDURE sf.pc_user_register
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0
            ROLLBACK TRANSACTION;
-		   SELECT 'ERR.INPUT_DATA_CONFLICT' AS [message];
+		   SELECT  0 AS [success], 'INPUT_DATA_CONFLICT' AS [message];
 	END CATCH;
 		IF @@TRANCOUNT > 0 BEGIN
 		   COMMIT TRANSACTION;
-		SELECT 'SUC.USER_REGISTERED' AS [message];
+		SELECT  1 AS [success], 'SUC.USER_REGISTERED' AS [message];
 	END;
-END GO
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_update_data
 (
@@ -94,27 +88,28 @@ CREATE PROCEDURE sf.pc_user_update_data
 ) AS BEGIN
 	DECLARE @user_exists BIT;
 	EXEC sf.pc_user_confirm_identity @p_id, @p_token, @user_exists OUTPUT;
-	IF (@user_exists = 0) BEGIN SELECT 'ERR.USER_DOESNT_EXIST' AS [message] RETURN END;
+	IF (@user_exists = 0) BEGIN SELECT 0 AS [success], 'USER_DOESNT_EXIST' AS [message] RETURN END;
 	BEGIN TRY
 		BEGIN TRANSACTION;
 		UPDATE sf.[user] SET
 			[email] = @p_email,
 			[first_name] = @p_first_name,
 			[last_name] = @p_last_name,
-			[profile_src] = @p_profile_src
+			[profile_src] = @p_profile_src	
 		WHERE [id] = @p_id;
 	END TRY
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0 BEGIN
 			ROLLBACK TRANSACTION;
-			SELECT 'ERR.INPUT_DATA_CONFLICT' AS [message];
+			SELECT 0 AS [success], 'INPUT_DATA_CONFLICT' AS [message];
 		END;
 	END CATCH;
 	IF @@TRANCOUNT > 0 BEGIN
 		COMMIT TRANSACTION;
-		SELECT 'SUC.CHANGES_COMMITED' AS [message];
+		SELECT 1 AS [success], 'CHANGES_COMMITED' AS [message];
 	END;
-END GO
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_update_balance
 (
@@ -124,15 +119,16 @@ CREATE PROCEDURE sf.pc_user_update_balance
 ) AS BEGIN
 	DECLARE @user_exists BIT;
 	EXEC sf.pc_user_confirm_identity @p_id, @p_token, @user_exists OUTPUT;
-	IF (@user_exists = 0) BEGIN SELECT 'ERR.USER_DOESNT_EXIST' AS [message] RETURN END;
+	IF (@user_exists = 0) BEGIN SELECT 0 AS [success], 'USER_DOESNT_EXIST' AS [message] RETURN END;
 	DECLARE @previous_balance MONEY;
 	SELECT @previous_balance = [balance] FROM sf.[user] WHERE [id] = @p_id;
-	IF @previous_balance + @p_balance_change < 0 BEGIN SELECT 'ERR.NEGATIVE_BALANCE' AS [message] END;
+	IF @previous_balance + @p_balance_change < 0 BEGIN SELECT 0 AS [success], 'NEGATIVE_BALANCE' AS [message] END;
 	ELSE BEGIN
 		UPDATE sf.[user] SET [balance] = @previous_balance + @p_balance_change WHERE [id] = @p_id;
-		SELECT 'SUC.BALANCE_CHANGED' AS [message];
+		SELECT 1 AS [success], 'BALANCE_CHANGED' AS [message];
 	END;
-END GO
+END 
+GO
 
 CREATE PROCEDURE sf.pc_user_buy_course
 (
@@ -143,15 +139,18 @@ CREATE PROCEDURE sf.pc_user_buy_course
 	DECLARE @price MONEY;
 	SELECT @price = [price] * -1 FROM sf.course WHERE [id] = @p_course_id;
 	IF (@price = NULL) BEGIN
-		SELECT 'ERR.COURSE_NOT_EXIST'
+		SELECT 0 AS [success], 'ERR.COURSE_NOT_EXIST' AS [message]
 	END ELSE BEGIN
+		INSERT INTO sf.course_access VALUES (@p_user_id, @p_token, DEFAULT)
 		EXEC sf.pc_user_update_balance @p_user_id, @p_token, @price
+		SELECT * FROM sf.[user] WHERE [id] = @p_user_id
 	END
-END;
+END
+GO
 
 EXEC sf.pc_user_drop_token 0, 'P6MpUJm5qp0f89jnzTSc6h2AroxwphiNycAE3oLie5JGyLrHCEGRWl0B6M2ZjkiCcaVVov1wdacFBvwPrvIFIDLThrDdA6U5KLvO';
-EXEC sf.pc_user_login 'admin', '12345223';
+EXEC sf.pc_user_login 'admin', '12345';
 EXEC sf.pc_user_register 'admin', '12345', 'admin@gmail.com', 'John', 'Doe';
 EXEC sf.pc_user_update_balance 0, 'A04BmoN6hLKVNsHpQFdDeuVzeZuPFUQ6W7Vq9dzSM3K6e5WtiK3YDZ99MTg4VpGBupnf6vGCAk04LDUMF8kcaqtg1kOQYbINVSN2', -60
 EXEC sf.pc_user_update_data 0, 'A04BmoN6hLKVNsHpQFdDeuVzeZuPFUQ6W7Vq9dzSM3K6e5WtiK3YDZ99MTg4VpGBupnf6vGCAk04LDUMF8kcaqtg1kOQYbINVSN2',
-	'admin@gmail.com', '12345223', 'John', 'Marx', NULL
+	'admin@gmail.com', '12345223', 'John', 'Marx'

@@ -4,7 +4,7 @@ using Safit.Core.Services.Authorisation;
 
 namespace Safit.API.Controllers.Authentification;
 
-[Route("api/auth")]
+[Route("api/v1/auth")]
 public class AuthentificationController : Controller
 {
     private IBearerTokenGeneratorService bearerTokenGeneratorService;

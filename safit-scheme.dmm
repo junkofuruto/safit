@@ -171,8 +171,6 @@
 				}
 			],
 			"relations": [
-				"9ebeb562-6b0e-4eef-b784-52ce852ee537",
-				"51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
 				"de0fd474-811b-47fb-812b-b1e07db3f1bf",
 				"1a820817-ae26-4043-b4b8-2281be30f1ee",
 				"ce6dc1ec-adad-4abe-8bc3-6e449724a98d",
@@ -196,116 +194,6 @@
 							"colid": "123e749a-1ec0-4d77-a361-7fddad9bab9a"
 						}
 					]
-				}
-			],
-			"indexes": [],
-			"embeddable": false,
-			"generate": true,
-			"generateCustomCode": true,
-			"customCode": "",
-			"beforeScript": "",
-			"afterScript": "",
-			"mssql": {
-				"schema": "sf"
-			}
-		},
-		"6b80d8a8-e176-4364-979a-657cf1585c4d": {
-			"id": "6b80d8a8-e176-4364-979a-657cf1585c4d",
-			"visible": true,
-			"name": "message",
-			"desc": "Сообщение - это текст, отправленное одним пользователем другому",
-			"estimatedSize": "",
-			"cols": [
-				{
-					"id": "f26d4dee-9357-4880-b0a3-09d33fc4124f",
-					"name": "id",
-					"datatype": "bigint",
-					"param": "",
-					"pk": true,
-					"nn": true,
-					"list": false,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"after": "",
-					"collation": null,
-					"mssql": {
-						"computed": ""
-					},
-					"estimatedSize": "",
-					"fk": false
-				},
-				{
-					"id": "e5034938-5fc2-4637-af4f-093b97797ac6",
-					"name": "user_id_src",
-					"datatype": "bigint",
-					"param": "",
-					"pk": false,
-					"nn": true,
-					"list": false,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"after": "",
-					"collation": null,
-					"mssql": {
-						"computed": ""
-					},
-					"estimatedSize": "",
-					"fk": true
-				},
-				{
-					"id": "279be83f-575b-4d3d-aa7c-bfaf1753083b",
-					"name": "user_id_dst",
-					"datatype": "bigint",
-					"param": "",
-					"pk": false,
-					"nn": true,
-					"list": false,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"after": "",
-					"collation": null,
-					"mssql": {
-						"computed": ""
-					},
-					"estimatedSize": "",
-					"fk": true
-				},
-				{
-					"id": "efd9d4c1-e3af-40f1-99b9-99a1c716bcc0",
-					"name": "value",
-					"datatype": "nvarchar",
-					"param": "512",
-					"pk": false,
-					"nn": true,
-					"list": false,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"after": "",
-					"collation": null,
-					"mssql": {
-						"computed": ""
-					},
-					"estimatedSize": ""
-				}
-			],
-			"relations": [
-				"9ebeb562-6b0e-4eef-b784-52ce852ee537",
-				"51894966-bbf1-4f1d-ae7b-fd49a6c27eee"
-			],
-			"lines": [],
-			"keys": [
-				{
-					"id": "cbc196a7-40c3-426a-bc04-287e724686c4",
-					"name": "table1_pkey1",
-					"isPk": true,
-					"mssql": {
-						"clustered": true
-					},
-					"cols": []
 				}
 			],
 			"indexes": [],
@@ -2072,60 +1960,6 @@
 		}
 	},
 	"relations": {
-		"9ebeb562-6b0e-4eef-b784-52ce852ee537": {
-			"id": "9ebeb562-6b0e-4eef-b784-52ce852ee537",
-			"visible": true,
-			"name": "message_user_id_fkey",
-			"desc": "",
-			"type": "identifying",
-			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
-			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
-			"child": "6b80d8a8-e176-4364-979a-657cf1585c4d",
-			"c_mp": "true",
-			"c_mch": "true",
-			"c_p": "one",
-			"c_ch": "many",
-			"c_cp": "",
-			"c_cch": "",
-			"cols": [
-				{
-					"id": "bb1fac69-2e74-41c6-b227-ab9a37c14062",
-					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
-					"childcol": "e5034938-5fc2-4637-af4f-093b97797ac6"
-				}
-			],
-			"generate": true,
-			"generateCustomCode": true,
-			"customCode": "",
-			"relationColor": "transparent"
-		},
-		"51894966-bbf1-4f1d-ae7b-fd49a6c27eee": {
-			"id": "51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
-			"visible": true,
-			"name": "message_user_id_fkey1",
-			"desc": "",
-			"type": "identifying",
-			"parent_key": "69b9d170-a165-42c3-9eeb-415f70a72ff0",
-			"parent": "2965bc69-6880-4c6c-8f8c-7e633f44c496",
-			"child": "6b80d8a8-e176-4364-979a-657cf1585c4d",
-			"c_mp": "true",
-			"c_mch": "true",
-			"c_p": "one",
-			"c_ch": "many",
-			"c_cp": "",
-			"c_cch": "",
-			"cols": [
-				{
-					"id": "a831dc7b-6761-4a7a-9e67-ec988d72a45d",
-					"parentcol": "123e749a-1ec0-4d77-a361-7fddad9bab9a",
-					"childcol": "279be83f-575b-4d3d-aa7c-bfaf1753083b"
-				}
-			],
-			"generate": true,
-			"generateCustomCode": true,
-			"customCode": "",
-			"relationColor": "transparent"
-		},
 		"de0fd474-811b-47fb-812b-b1e07db3f1bf": {
 			"id": "de0fd474-811b-47fb-812b-b1e07db3f1bf",
 			"visible": true,
@@ -2827,7 +2661,7 @@
 			"id": "50b6647e-1c17-4a05-813e-75fade34e72d",
 			"visible": true,
 			"name": "prog",
-			"desc": "<ol><li><strong>user</strong></li><li class=\"ql-indent-1\"><strong>generate token</strong></li><li class=\"ql-indent-1\"><strong>confirm identity</strong></li><li class=\"ql-indent-1\"><strong>drop token</strong></li><li class=\"ql-indent-1\"><strong>login</strong></li><li class=\"ql-indent-1\"><strong>register</strong></li><li class=\"ql-indent-1\"><strong>update data</strong></li><li class=\"ql-indent-1\"><strong>update balance</strong></li><li class=\"ql-indent-1\"><strong>buy course</strong></li><li><strong>trainer</strong></li><li class=\"ql-indent-1\"><strong>is promoted</strong></li><li class=\"ql-indent-1\"><strong>promote</strong></li><li class=\"ql-indent-1\"><strong>add specialisation</strong></li><li><strong>subscription</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>remove</strong></li><li><strong>sport</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li><strong>cart</strong></li><li class=\"ql-indent-1\"><strong>new instance</strong></li><li class=\"ql-indent-1\"><strong>add product</strong></li><li><strong>message</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li><strong>comment</strong></li><li class=\"ql-indent-1\"><strong>create&nbsp;(alters recommendation matrix)</strong></li><li><strong>like</strong></li><li class=\"ql-indent-1\"><strong>create&nbsp;(alters recommendation matrix)</strong></li><li><strong>product</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li><strong>course</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li><strong>post</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li class=\"ql-indent-1\"><strong>get info</strong></li><li class=\"ql-indent-1\"><strong>get new</strong></li><li><strong>video</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li class=\"ql-indent-1\"><strong>get info (alters recommendation matrix)</strong></li><li class=\"ql-indent-1\"><strong>get new</strong></li><li><strong>fetch_source</strong></li><li class=\"ql-indent-1\"><strong>add</strong></li><li><strong>tag</strong></li><li class=\"ql-indent-1\"><strong>add</strong></li></ol>",
+			"desc": "<ol><li><strong>user</strong></li><li class=\"ql-indent-1\"><strong>generate token</strong></li><li class=\"ql-indent-1\"><strong>confirm identity</strong></li><li class=\"ql-indent-1\"><strong>drop token</strong></li><li class=\"ql-indent-1\"><strong>login</strong></li><li class=\"ql-indent-1\"><strong>register</strong></li><li class=\"ql-indent-1\"><strong>update data</strong></li><li class=\"ql-indent-1\"><strong>update balance</strong></li><li class=\"ql-indent-1\"><strong>buy course</strong></li><li><strong>trainer</strong></li><li class=\"ql-indent-1\"><strong>is promoted</strong></li><li class=\"ql-indent-1\"><strong>promote</strong></li><li class=\"ql-indent-1\"><strong>add specialisation</strong></li><li><strong>subscription</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>remove</strong></li><li><strong>sport</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li><strong>cart</strong></li><li class=\"ql-indent-1\"><strong>new instance</strong></li><li class=\"ql-indent-1\"><strong>add product</strong></li><li><strong>comment</strong></li><li class=\"ql-indent-1\"><strong>create&nbsp;(alters recommendation matrix)</strong></li><li><strong>like</strong></li><li class=\"ql-indent-1\"><strong>create&nbsp;(alters recommendation matrix)</strong></li><li><strong>product</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li><strong>course</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li><strong>post</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li class=\"ql-indent-1\"><strong>get info</strong></li><li class=\"ql-indent-1\"><strong>get new</strong></li><li><strong>video</strong></li><li class=\"ql-indent-1\"><strong>create</strong></li><li class=\"ql-indent-1\"><strong>edit</strong></li><li class=\"ql-indent-1\"><strong>get info (alters recommendation matrix)</strong></li><li class=\"ql-indent-1\"><strong>get new</strong></li><li><strong>fetch_source</strong></li><li class=\"ql-indent-1\"><strong>add</strong></li><li><strong>tag</strong></li><li class=\"ql-indent-1\"><strong>add to video</strong></li><li class=\"ql-indent-1\"><strong>add to post</strong></li></ol>",
 			"lines": [],
 			"type": "Note"
 		}
@@ -2887,7 +2721,7 @@
 			"indexes": true,
 			"relations": true
 		},
-		"lastSaved": 1701873170374
+		"lastSaved": 1701875627753
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -2909,19 +2743,6 @@
 					"y": 298,
 					"gHeight": 189,
 					"gWidth": 220,
-					"color": "#ffffff",
-					"background": "#03a9f4",
-					"resized": false,
-					"autoExpand": true,
-					"backgroundOpacity": "10",
-					"collapsed": false
-				},
-				"6b80d8a8-e176-4364-979a-657cf1585c4d": {
-					"referencedItemId": "6b80d8a8-e176-4364-979a-657cf1585c4d",
-					"x": 512,
-					"y": 300,
-					"gHeight": 99,
-					"gWidth": 202,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -3182,7 +3003,6 @@
 	},
 	"order": [
 		"2965bc69-6880-4c6c-8f8c-7e633f44c496",
-		"6b80d8a8-e176-4364-979a-657cf1585c4d",
 		"879dcb3b-8e85-45ff-95ff-10d74034dabb",
 		"cfc4387e-6f6d-427a-ad54-1009e2b9a7f7",
 		"e88a42a6-c179-46ff-8433-f178825d1074",
@@ -3199,8 +3019,6 @@
 		"c6f5c2d5-8428-4b4c-bf0e-b4243ef251a7",
 		"d1ef6ce3-18e8-4b2a-95ec-5e009626da69",
 		"eed7c019-6262-47b2-85a4-0db9f2e8b0f8",
-		"9ebeb562-6b0e-4eef-b784-52ce852ee537",
-		"51894966-bbf1-4f1d-ae7b-fd49a6c27eee",
 		"de0fd474-811b-47fb-812b-b1e07db3f1bf",
 		"1a820817-ae26-4043-b4b8-2281be30f1ee",
 		"9f22f7ff-ed94-4a4b-b3a5-b6874213e957",

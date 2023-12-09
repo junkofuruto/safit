@@ -1,13 +1,13 @@
 -- DROP DATABASE [safit]
 
 CREATE DATABASE [safit];
-GO;
+GO
 
 USE [safit];
-GO;
+GO
 
 CREATE SCHEMA sf;
-GO;
+GO
 
 CREATE TABLE sf.[user]
 (
@@ -22,7 +22,7 @@ CREATE TABLE sf.[user]
 	[token]				VARCHAR(100) NOT NULL,
 
 	PRIMARY KEY ([id])
-);
+)
 GO
 
 CREATE TABLE sf.[trainer]
@@ -47,7 +47,7 @@ GO
 
 CREATE TABLE sf.[sport]
 (
-	[id]				BIGINT NOT NULL,
+	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[name]				NVARCHAR(30) NOT NULL,
 	[description]		NVARCHAR(200) NOT NULL,
 	[preview_src]		VARCHAR(65) NOT NULL,
@@ -88,7 +88,6 @@ CREATE TABLE sf.[post]
 	[content]			NVARCHAR(2500) NOT NULL,
 	[course_id]			BIGINT NULL,
 	[views]				INT NOT NULL DEFAULT 0,
-	[visible]			BIT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY ([id]),
 	FOREIGN KEY ([trainer_id], [sport_id]) REFERENCES sf.[specialisation] ([trainer_id], [sport_id]),
@@ -116,7 +115,7 @@ CREATE TABLE sf.[product]
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
 	[trainer_id]		BIGINT NOT NULL,
 	[sport_id]			BIGINT NOT NULL,
-	[link]				NVARCHAR(512) NOT NULL,
+	[link]				VARCHAR(512) NOT NULL,
 	[price]				MONEY NOT NULL,
 	[name]				NVARCHAR(100) NOT NULL,
 	[description]		NVARCHAR(400) NOT NULL,
@@ -188,12 +187,22 @@ GO
 CREATE TABLE sf.[tag]
 (
 	[id]				BIGINT NOT NULL IDENTITY(0, 1),
-	[video_id]			BIGINT NOT NULL,
 	[name]				NVARCHAR(65) NOT NULL UNIQUE,
 
-	PRIMARY KEY ([id]),
+	PRIMARY KEY ([id])
+)
+GO
+
+CREATE TABLE sf.[video_tag]
+(
+	[tag_id]			BIGINT NOT NULL,
+	[video_id]			BIGINT NOT NULL,
+
+	PRIMARY KEY ([tag_id], [video_id]),
+	FOREIGN KEY ([tag_id]) REFERENCES sf.[tag]([id]),
 	FOREIGN KEY ([video_id]) REFERENCES sf.video([id])
 )
+GO
 
 CREATE TABLE sf.[recommendation]
 (
@@ -205,6 +214,7 @@ CREATE TABLE sf.[recommendation]
 	FOREIGN KEY ([user_id]) REFERENCES sf.[user] ([id]),
 	FOREIGN KEY ([tag_id]) REFERENCES sf.[tag] ([id])
 )
+GO
 
 CREATE TABLE sf.[fetch_source]
 (
@@ -214,3 +224,15 @@ CREATE TABLE sf.[fetch_source]
 	PRIMARY KEY ([video_id], [source]),
 	FOREIGN KEY ([video_id]) REFERENCES sf.video ([id])
 )
+GO
+
+CREATE TABLE sf.[post_tag]
+(
+	[post_id]			BIGINT NOT NULL,
+	[tag_id]			BIGINT NOT NULL,
+
+	PRIMARY KEY ([post_id], [tag_id]),
+	FOREIGN KEY ([post_id]) REFERENCES sf.post ([id]),
+	FOREIGN KEY ([tag_id]) REFERENCES sf.tag ([id]),
+)
+GO
