@@ -4,7 +4,7 @@ using Safit.Core.Domain.Model;
 
 namespace Safit.Core.DataAccess.Repository;
 
-public abstract class BaseRepository<T> where T : Entity
+internal abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
 {
     protected DatabaseContext context;
 
@@ -13,6 +13,10 @@ public abstract class BaseRepository<T> where T : Entity
         this.context = context; 
     }
 
+    public async Task<IQueryable<T>> FindAll()
+    {
+        return await Task.Run(() => context.Set<T>().AsNoTracking());
+    }
     public async Task<IQueryable<T>> FindByCondition(Expression<Func<T, bool>> expression)
     {
         return await Task.Run(() => context.Set<T>().Where(expression).AsNoTracking());
@@ -29,4 +33,6 @@ public abstract class BaseRepository<T> where T : Entity
     {
         await Task.Run(() => context.Set<T>().Update(entity));
     }
+
+    
 }

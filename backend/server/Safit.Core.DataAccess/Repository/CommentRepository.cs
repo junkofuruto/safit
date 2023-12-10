@@ -2,7 +2,7 @@
 
 namespace Safit.Core.DataAccess.Repository;
 
-public class CommentRepository : BaseRepository<Comment>, ICommentRepository
+internal class CommentRepository : BaseRepository<Comment>, ICommentRepository
 {
     public CommentRepository(DatabaseContext context) : base(context) { }
 }

@@ -2,6 +2,6 @@
 
 namespace Safit.Core.DataAccess;
 
-public interface ICommentRepository : IBaseRepository<Comment>
+public interface IPostRepository : IBaseRepository<Post>
 {
 }

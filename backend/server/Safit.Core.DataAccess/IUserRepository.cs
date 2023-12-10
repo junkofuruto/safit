@@ -2,7 +2,7 @@
 
 namespace Safit.Core.DataAccess;
 
-public interface IUserRepository : IRepositoryBase<User>
+public interface IUserRepository : IBaseRepository<User>
 {
 
 }

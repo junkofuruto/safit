@@ -1,10 +1,8 @@
 ﻿using Safit.Core.DataAccess.Repository;
-using Safit.Core.Domain.Model;
-using System.Reflection.Emit;
 
 namespace Safit.Core.DataAccess.Wrapper;
 
-public class RepositoryWrapper
+public class RepositoryWrapper : IRepositoryWrapper
 {
     private DatabaseContext context;
     private IUserRepository? userRepository;
@@ -12,6 +10,21 @@ public class RepositoryWrapper
     private ICartContentRepository? cartContentRepository;
     private ICourseRepository? courseRepository;
     private ICommentRepository? commentRepository;
+    private ICourseAccessRepository? courseAccessRepository;
+    private IFetchSourceRepository? fetchSourceRepository;
+    private IPostRepository? postRepositoryWrapper;
+    private IProductRepository? productRepository;
+    private IRecommendationRepository? recommendationRepository;
+    private ISpecialisationRepository? specialisationRepository;
+    private ISportRepository? sportRepository;
+    private ITagRepository? tagRepository;
+    private ITrainerRepository? trainerRepository;
+    private IVideoRepository? videoRepository;
+
+    public RepositoryWrapper(DatabaseContext context)
+    {
+        this.context = context;
+    }
 
     public IUserRepository User
     {
@@ -40,7 +53,7 @@ public class RepositoryWrapper
             return cartContentRepository;
         }
     }
-    public ICourseRepository CourseRepository
+    public ICourseRepository Course
     {
         get
         {
@@ -49,7 +62,7 @@ public class RepositoryWrapper
             return courseRepository;
         }
     }
-    public ICommentRepository CommentRepository
+    public ICommentRepository Comment
     {
         get
         {
@@ -58,11 +71,97 @@ public class RepositoryWrapper
             return commentRepository;
         }
     }
-
-    public RepositoryWrapper(DatabaseContext context)
+    public ICourseAccessRepository CourseAccess
     {
-        this.context = context;
+        get
+        {
+            if (courseAccessRepository == null)
+                courseAccessRepository = new CourseAccessRepository(context);
+            return courseAccessRepository;
+        }
     }
+    public IFetchSourceRepository FetchSource
+    {
+        get
+        {
+            if (fetchSourceRepository == null)
+                fetchSourceRepository = new FetchSourceRepository(context);
+            return fetchSourceRepository;
+        }
+    }
+    public IPostRepository Post
+    {
+        get
+        {
+            if (postRepositoryWrapper == null)
+                postRepositoryWrapper = new PostRepository(context);
+            return postRepositoryWrapper;
+        }
+    }
+    public IProductRepository Product
+    {
+        get
+        {
+            if (productRepository == null)
+                productRepository = new ProductRepository(context);
+            return productRepository;
+        }
+    }
+    public IRecommendationRepository Recommendation
+    {
+        get
+        {
+            if (recommendationRepository == null)
+                recommendationRepository = new RecommendationRepository(context);
+            return recommendationRepository;
+        }
+    }
+    public ISpecialisationRepository Specialisation
+    {
+        get
+        {
+            if (specialisationRepository == null)
+                specialisationRepository = new SpecialisationRepository(context);
+            return specialisationRepository;
+        }
+    }
+    public ISportRepository Sport
+    {
+        get
+        {
+            if (sportRepository == null)
+                sportRepository = new SportRepository(context);
+            return sportRepository;
+        }
+    }
+    public ITagRepository Tag
+    {
+        get
+        {
+            if (tagRepository == null)
+                tagRepository = new TagRepository(context);
+            return tagRepository;
+        }
+    }
+    public ITrainerRepository Trainer
+    {
+        get
+        {
+            if (trainerRepository == null)
+                trainerRepository = new TrainerRepository(context);
+            return trainerRepository;
+        }
+    }
+    public IVideoRepository Video
+    {
+        get
+        {
+            if (videoRepository == null)
+                videoRepository = new VideoRepository(context);
+            return videoRepository;
+        }
+    }
+
     public async Task SaveChangesAsync()
     {
         await context.SaveChangesAsync();

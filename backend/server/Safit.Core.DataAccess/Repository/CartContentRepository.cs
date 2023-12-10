@@ -2,7 +2,7 @@
 
 namespace Safit.Core.DataAccess.Repository;
 
-public class CartContentRepository : BaseRepository<CartContent>, ICartContentRepository
+internal class CartContentRepository : BaseRepository<CartContent>, ICartContentRepository
 {
     public CartContentRepository(DatabaseContext context) : base(context) { }
 }

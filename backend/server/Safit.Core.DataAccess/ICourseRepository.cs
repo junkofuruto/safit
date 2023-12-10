@@ -2,6 +2,6 @@
 
 namespace Safit.Core.DataAccess;
 
-public interface ICourseRepository : IRepositoryBase<Course>
+public interface ICourseRepository : IBaseRepository<Course>
 {
 }

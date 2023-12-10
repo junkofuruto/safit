@@ -2,6 +2,6 @@
 
 namespace Safit.Core.DataAccess;
 
-public interface ICartContentRepository : IRepositoryBase<CartContent>
+public interface ICartContentRepository : IBaseRepository<CartContent>
 {
 }

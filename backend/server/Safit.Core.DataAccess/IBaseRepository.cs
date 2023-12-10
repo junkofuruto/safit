@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 
 namespace Safit.Core.DataAccess;
 
-public interface IRepositoryBase<T>
+public interface IBaseRepository<T>
 {
+    Task<IQueryable<T>> FindAll();
     Task<IQueryable<T>> FindByCondition(Expression<Func<T, bool>> expression);
     Task Create(T entity);
     Task Update(T entity);
