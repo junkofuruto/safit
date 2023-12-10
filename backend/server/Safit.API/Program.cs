@@ -3,8 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Safit.Core.DataAccess;
 using Safit.Core.DataAccess.Wrapper;
+using Safit.Core.Domain.Repository;
+using Safit.Core.Domain.Service;
 using Safit.Core.Services.Authentification;
-using Safit.Core.Services.Authentification.Token;
 using Safit.Core.Services.Authorisation;
 using System.Text;
 

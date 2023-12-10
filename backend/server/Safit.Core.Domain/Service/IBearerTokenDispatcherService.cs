@@ -1,4 +1,4 @@
-﻿namespace Safit.Core.Services.Authentification;
+﻿namespace Safit.Core.Domain.Service;
 
 public interface IBearerTokenDispatcherService
 {

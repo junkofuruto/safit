@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
+using Safit.Core.Domain.Service;
 
-namespace Safit.Core.Services.Authentification.Token;
+namespace Safit.Core.Services.Authentification;
 
 public class BearerTokenDispatcherService : IBearerTokenDispatcherService
 {

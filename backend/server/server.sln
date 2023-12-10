@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{91
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.Core.Services.Authentification", "Safit.Core.Services.Authentification\Safit.Core.Services.Authentification.csproj", "{47379081-D493-482C-A840-FEA3EC1A7A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.Services.Authorisation", "Safit.Core.Services.Authorisation\Safit.Core.Services.Authorisation.csproj", "{AB879BEE-CBFA-4E73-B837-6AD523788DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safit.Core.Services.Authorisation", "Safit.Core.Services.Authorisation\Safit.Core.Services.Authorisation.csproj", "{AB879BEE-CBFA-4E73-B837-6AD523788DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safit.Core.Services.EmailValidation", "Safit.Core.Services.EmailValidation\Safit.Core.Services.EmailValidation.csproj", "{B2B64C91-9494-470E-99A1-C15084F46511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB879BEE-CBFA-4E73-B837-6AD523788DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B64C91-9494-470E-99A1-C15084F46511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B64C91-9494-470E-99A1-C15084F46511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B64C91-9494-470E-99A1-C15084F46511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B64C91-9494-470E-99A1-C15084F46511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{91B25648-8978-434B-96FD-B26AB5E6D165} = {5DEDD28D-6A41-4A97-B3EA-5D68833594FB}
 		{47379081-D493-482C-A840-FEA3EC1A7A75} = {91B25648-8978-434B-96FD-B26AB5E6D165}
 		{AB879BEE-CBFA-4E73-B837-6AD523788DC9} = {91B25648-8978-434B-96FD-B26AB5E6D165}
+		{B2B64C91-9494-470E-99A1-C15084F46511} = {91B25648-8978-434B-96FD-B26AB5E6D165}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC33E462-79EF-4CC8-8354-343CC1918321}

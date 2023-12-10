@@ -1,4 +1,5 @@
 ﻿using Safit.Core.DataAccess.Repository;
+using Safit.Core.Domain.Repository;
 
 namespace Safit.Core.DataAccess.Wrapper;
 

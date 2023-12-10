@@ -19,8 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Safit.Core.DataAccess\Safit.Core.DataAccess.csproj" />
     <ProjectReference Include="..\Safit.Core.Services.Authentification\Safit.Core.Services.Authentification.csproj" />
     <ProjectReference Include="..\Safit.Core.Services.Authorisation\Safit.Core.Services.Authorisation.csproj" />
+    <ProjectReference Include="..\Safit.Core.Services.EmailValidation\Safit.Core.Services.EmailValidation.csproj" />
   </ItemGroup>
 
 </Project>

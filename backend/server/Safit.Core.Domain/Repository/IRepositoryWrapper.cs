@@ -1,4 +1,4 @@
-﻿namespace Safit.Core.DataAccess;
+﻿namespace Safit.Core.Domain.Repository;
 
 public interface IRepositoryWrapper
 {

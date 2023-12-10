@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Safit.Core.Domain;
+using Safit.Core.Domain.Service;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Safit.Core.Services.Authentification.Token;
+namespace Safit.Core.Services.Authentification;
 
 public sealed class BearerTokenGeneratorService : IBearerTokenGeneratorService
 {

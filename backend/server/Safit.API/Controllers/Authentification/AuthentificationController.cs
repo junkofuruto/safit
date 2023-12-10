@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Safit.Core.Services.Authentification;
-using Safit.Core.Services.Authorisation;
+using Safit.Core.Domain.Service;
 
 namespace Safit.API.Controllers.Authentification;
 
