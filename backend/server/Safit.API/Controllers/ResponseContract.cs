@@ -20,10 +20,12 @@ public sealed class ResponseContract<T>
 
     public static ResponseContract<T> Create(Exception exception)
     {
-        return new ResponseContract<T>()
+        var response = new ResponseContract<T>()
         {
             Success = false,
-            Message = exception.Message
+            Message = $"{exception.Source}: {exception.Message}"
         };
+        if (exception.InnerException != null) response.Message = exception.InnerException.Message;
+        return response;
     }
 }

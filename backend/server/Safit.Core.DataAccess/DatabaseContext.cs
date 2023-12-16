@@ -44,8 +44,6 @@ public partial class DatabaseContext : DbContext
 
     public virtual DbSet<Video> Videos { get; set; }
 
-    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer();
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Cart>(entity =>
@@ -93,21 +91,14 @@ public partial class DatabaseContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BranchId).HasColumnName("branch_id");
             entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.Value)
+                .HasMaxLength(200)
+                .HasColumnName("value");
             entity.Property(e => e.VideoId).HasColumnName("video_id");
 
             entity.HasOne(d => d.Branch).WithMany(p => p.InverseBranch)
                 .HasForeignKey(d => d.BranchId)
                 .HasConstraintName("FK__comment__branch___5EBF139D");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Comments)
-                .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__comment__user_id__5CD6CB2B");
-
-            entity.HasOne(d => d.Video).WithMany(p => p.Comments)
-                .HasForeignKey(d => d.VideoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__comment__video_i__5DCAEF64");
         });
 
         modelBuilder.Entity<Course>(entity =>

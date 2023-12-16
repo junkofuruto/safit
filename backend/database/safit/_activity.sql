@@ -1,6 +1,8 @@
 USE [safit]
 GO
 
+EXEC sf.pc_user_drop_token 25, '\_[```^^`\\_[`Z]Z_Z`_Z[\Z[^^]Z`[_`][\[[_[]^[^Z`[[^]`^\[\__\]^]^_`[_^Z^\]]_[]Z\Z]ZZ`Z[^[^`^`\Z_Z[Z^\'
+
 EXEC sf.pc_user_register 'admin', '12345', 'admin@gmail.com', 'John', 'Doe'
 GO
 

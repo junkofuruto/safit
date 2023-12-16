@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Safit.Core.Domain.Model;
+﻿namespace Safit.Core.Domain.Model;
 
 public partial class User : Entity
 {

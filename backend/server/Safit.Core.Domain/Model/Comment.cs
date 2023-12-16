@@ -13,11 +13,9 @@ public partial class Comment : Entity
 
     public long? BranchId { get; set; }
 
+    public string? Value { get; set; }
+
     public virtual Comment? Branch { get; set; }
 
     public virtual ICollection<Comment> InverseBranch { get; set; } = new List<Comment>();
-
-    public virtual User User { get; set; } = null!;
-
-    public virtual Video Video { get; set; } = null!;
 }

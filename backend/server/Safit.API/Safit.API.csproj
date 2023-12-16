@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
       <PrivateAssets>all</PrivateAssets>
@@ -21,8 +22,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Safit.Core.DataAccess\Safit.Core.DataAccess.csproj" />
     <ProjectReference Include="..\Safit.Core.Services.Authentification\Safit.Core.Services.Authentification.csproj" />
-    <ProjectReference Include="..\Safit.Core.Services.Authorisation\Safit.Core.Services.Authorisation.csproj" />
-    <ProjectReference Include="..\Safit.Core.Services.EmailValidation\Safit.Core.Services.EmailValidation.csproj" />
+    <ProjectReference Include="..\Safit.Core.Services.Authorisation\Safit.Core.Services.Authorization.csproj" />
+    <ProjectReference Include="..\Safit.Core.Services.ContentManagement\Safit.Core.Services.ContentManagement.csproj" />
+    <ProjectReference Include="..\Safit.Core.Services.ProfileManagement\Safit.Core.Services.ProfileManagement.csproj" />
+    <ProjectReference Include="..\Safit.Core.Services.Shopping\Safit.Core.Services.Shopping.csproj" />
   </ItemGroup>
 
 </Project>
