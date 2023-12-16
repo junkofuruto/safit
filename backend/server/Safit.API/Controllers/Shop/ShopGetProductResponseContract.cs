@@ -1,0 +1,12 @@
+﻿namespace Safit.API.Controllers.Shop;
+
+public class ShopGetProductResponseContract
+{
+    public long Id { get; set; }
+    public long TrainerId { get; set; }
+    public long SportId { get; set; }
+    public string Link { get; set; } = null!;
+    public decimal Price { get; set; }
+    public string Name { get; set; } = null!; 
+    public string Description { get; set; } = null!;
+}

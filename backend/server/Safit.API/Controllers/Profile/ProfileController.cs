@@ -1,7 +1,5 @@
-﻿using Mapster;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Safit.Core.Domain.Model;
 using Safit.Core.Domain.Service;
 
 namespace Safit.API.Controllers.Profile;
