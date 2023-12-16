@@ -6,7 +6,7 @@ using Safit.Core.Domain.Service;
 
 namespace Safit.Core.Services.Shopping;
 
-public class ProductService : IProductService
+public class ProductService
 {
     private IRepositoryWrapper repositoryWrapper;
 

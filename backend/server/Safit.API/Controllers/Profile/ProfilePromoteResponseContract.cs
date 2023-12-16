@@ -11,4 +11,3 @@ public class ProfilePromoteResponseContract
     public decimal Balance { get; set; }
     public bool IsTrainer { get; set; }
 }
-}

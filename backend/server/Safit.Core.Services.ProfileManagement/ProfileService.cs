@@ -2,11 +2,10 @@
 using Safit.Core.Domain.Model;
 using Safit.Core.Domain.Service;
 using Safit.Core.Domain.Repository;
-using Safit.Core.Services.ProfileManagement.Exceptions;
 
 namespace Safit.Core.Services.ProfileManagement;
 
-public class ProfileService : IProfileManagementService
+public class ProfileService
 {
     private IRepositoryWrapper repositoryWrapper;
 
@@ -19,15 +18,13 @@ public class ProfileService : IProfileManagementService
     {
         var user = await repositoryWrapper.User.FindByCondition(x => x.Username == username, ct);
         var selected = await user.FirstOrDefaultAsync(ct);
-        if (selected == null) throw new UserNotFoundException();
-        else return selected;
+        return selected;
     }
     public async Task<User> GetUserAsync(long id, CancellationToken ct = default)
     {
         var user = await repositoryWrapper.User.FindByCondition(x => x.Id == id, ct);
         var selected = await user.FirstOrDefaultAsync(ct);
-        if (selected == null) throw new UserNotFoundException();
-        else return selected;
+        return selected;
     }
     public async Task UpdateInformationAsync(User user, CancellationToken ct = default)
     {

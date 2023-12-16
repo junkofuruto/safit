@@ -67,6 +67,9 @@ builder.Services.AddAuthentication(defaultScheme: JwtBearerDefaults.Authenticati
 
 var app = builder.Build();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseAuthorization();
