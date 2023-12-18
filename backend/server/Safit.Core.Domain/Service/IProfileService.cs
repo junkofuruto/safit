@@ -12,7 +12,7 @@ public interface IProfileService
     public Task<User> PromoteAsync(AuthentificationToken token, CancellationToken ct = default);
     public Task<IQueryable<Sport>> GetSpecialisationsAsync(AuthentificationToken token, CancellationToken ct = default);
     public Task<IQueryable<Sport>> GetSpecialisationsAsync(string username, CancellationToken ct = default);
-    public Task<Sport> AddSpecialisationAsync(AuthentificationToken token, CancellationToken ct = default);
+    public Task<Sport> AddSpecialisationAsync(AuthentificationToken token, long sportId, CancellationToken ct = default);
     public Task<Sport> CreateSportAsync(AuthentificationToken token, Sport sport, CancellationToken ct = default);
     public Task<bool> IsTrainerAsync(AuthentificationToken token, CancellationToken ct = default);
 }

@@ -3,12 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # SQL Server Management Studio Solution File, Format Version 19.00
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "safit", "safit\safit.ssmssqlproj", "{01D3022C-6516-4F36-AAE3-E0ED26DA21E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{967EA33C-89E9-4C4C-B60C-2DFEB85FC8CF}.Default|Default.ActiveCfg = Default
+		{01D3022C-6516-4F36-AAE3-E0ED26DA21E2}.Default|Default.ActiveCfg = Default
+		{6646A1C9-E1DE-4D39-981C-BEFBDEA538E3}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,22 +7,43 @@ namespace Safit.API.Controllers.Authentification;
 [ApiController]
 public class AuthentificationController : ControllerBase
 {
-    private IAuthentificationService authentificationService;
+    private IAuthorizationService authorizationService;
 
-    public AuthentificationController(IAuthentificationService authentificationService)
+    public AuthentificationController(
+        IAuthorizationService authorizationService)
     {
-        this.authentificationService = authentificationService;
+        this.authorizationService = authorizationService;
     }
 
     [HttpPost("login")]
     public async Task<IActionResult> LoginAsync([FromBody] AuthentificationLoginRequestContract request, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var token = await authorizationService.LoginAsync(request.Username, request.Password, ct);
+            var response = new AuthentificationLoginResponseContract() { Token = token.Value };
+            return Ok(ResponseContract<AuthentificationLoginResponseContract>.Create(response));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ResponseContract<AuthentificationLoginResponseContract>.Create(ex));
+        }
     }
 
     [HttpPost("register")]
     public async Task<IActionResult> RegisterAsync([FromBody] AuthentificationRegisterRequestContract request, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var token = await authorizationService.RegisterAsync(
+                request.Email, request.Username, request.Password, 
+                request.FirstName, request.LastName, request.ProfileSrc, ct);
+            var response = new AuthentificationRegisterResponseContract() { Token = token.Value };
+            return Ok(ResponseContract<AuthentificationRegisterResponseContract>.Create(response));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ResponseContract<AuthentificationRegisterResponseContract>.Create(ex));
+        }
     }
 }

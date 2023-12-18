@@ -2,6 +2,6 @@
 
 public class CourseContent
 {
-    public int Id { get; set; }
+    public long Id { get; set; }
     public CourseContentType ContentType { get; set; }
 }

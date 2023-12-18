@@ -45,7 +45,7 @@ public sealed class AuthorizationService : IAuthorizationService
         password = EncryptPassword(password);
         var selection = await repository.User.FindByCondition(x => x.Username == username && x.Password == password, ct);
         var result = await selection.FirstOrDefaultAsync(ct);
-        if (result == null) throw new InvalidCredentialException($"{nameof(AuthorizationService)}: incorrect username or password");
+        if (result == null) throw new InvalidCredentialException($"incorrect username or password");
         var authData = new AuthentificationData() { Id = result.Id };
         return await authentificationService.GenerateAsync(authData);
     }

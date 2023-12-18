@@ -51,8 +51,14 @@ public class VideoController : ControllerBase
         throw new NotImplementedException();
     }
 
-    [HttpGet("{id}/upload")]
+    [HttpPost("{id}/upload")]
     public async Task<IActionResult> UploadAsync([FromRoute] long id, CancellationToken ct)
+    {
+        throw new NotImplementedException();
+    }
+
+    [HttpPost("create")]
+    public async Task<IActionResult> CreateAsync(CancellationToken ct)
     {
         throw new NotImplementedException();
     }

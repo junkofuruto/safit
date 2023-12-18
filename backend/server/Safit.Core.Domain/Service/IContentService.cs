@@ -8,5 +8,5 @@ public interface IContentService
 {
     public Task<Course> PurchaseCourseAsync(AuthentificationToken token, long courseId, CancellationToken ct = default);
     public Task<Course> GetCourseInfoAsync(long courseId, CancellationToken ct = default);
-    public Task<CourseContent> GetCourseContentAsync(long courseId, CancellationToken ct = default);
+    public Task<IEnumerable<CourseContent>> GetCourseContentAsync(long courseId, CancellationToken ct = default);
 }

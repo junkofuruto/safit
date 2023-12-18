@@ -40,4 +40,10 @@ public class TrainerController : ControllerBase
     {
         throw new NotImplementedException();
     }
+
+    [HttpGet("{username}/specialisations")]
+    public async Task<IActionResult> GetSpecialisationsAsync([FromRoute] string username, CancellationToken ct)
+    {
+        throw new NotImplementedException();
+    }
 }
